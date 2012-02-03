@@ -49,7 +49,35 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
         })
       }
 
-      $('#nav').append('<p style="margin-top:10px;font-size:70%;color:#CCC">Bitte auf einzelne Teilmärkte<br>klicken, um sie auf der Karte<br>ein- und auszublenden.</p>');
+      $('#nav').append('<p id="toggle_all" style="margin-left:12px;margin-top:10px;color:white;font-size:90%;">Alles ausblenden</p>');
+
+      $('#toggle_all').hover(function() {
+        $(this).css('cursor','pointer');
+      });
+
+      $('#toggle_all').toggle(function(ev){
+        ev.preventDefault();
+        $(this).text("Alle einblenden");
+        for (var i = 0; i <= 11; i++) {
+          $('div#nav div#'+pad(i,2)).css('color', '#888');
+          $('div#nav div#'+pad(i,2)).children('img').css('opacity', '0.6');
+          $('div#nav div#'+pad(i,2)).children('img').css('filter', 'alpha(opacity=60)');
+          $('div.leaflet-shadow-pane div.'+pad(i,2)).hide();
+          $('div.leaflet-marker-pane div.'+pad(i,2)).hide();
+        }
+      },function(ev){
+        ev.preventDefault();
+        $(this).text("Alle ausblenden");
+        for (var i = 0; i <= 11; i++) {
+          $('div#nav div#'+pad(i,2)).css('color', 'white');
+          $('div#nav div#'+pad(i,2)).children('img').css('opacity', '');
+          $('div#nav div#'+pad(i,2)).children('img').css('filter', '');
+          $('div.leaflet-shadow-pane div.'+pad(i,2)).show();
+          $('div.leaflet-marker-pane div.'+pad(i,2)).show();
+        }
+      });
+
+      $('#nav').append('<p style="margin-left:12px;margin-top:10px;font-size:70%;color:#CCC">Bitte auf einzelne Teilmärkte<br>klicken, um sie auf der Karte<br>ein- und auszublenden.</p>');
     });
     </script>
 
