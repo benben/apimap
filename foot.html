@@ -1,5 +1,57 @@
+// ############### END OF DATA ################
+
+$(".leaflet-top.leaflet-left").prepend('<div id="nav" class="leaflet-control-zoom leaflet-control"></div>')
+
+$(".leaflet-control-zoom.leaflet-control").css("background-color","rgba(0,0,0,0.75)");
+
+function pad(number, length) {
+  var str = '' + number;
+  while (str.length < length) {
+      str = '0' + str;
+  }
+  return str;
+}
+
+for (var i = 0; i <= 11; i++) {
+  $('div.leaflet-shadow-pane img.'+pad(i,2)).wrapAll('<div class="'+pad(i,2)+'" />');
+  $('div.leaflet-marker-pane img.'+pad(i,2)).wrapAll('<div class="'+pad(i,2)+'" />');
+}
+
+var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Pressemarkt", "Rundfunkwirtschaft", "Filmwirtschaft", "Markt für darstellende Künste", "Kunstmarkt", "Musikwirtschaft", "Werbemarkt", "Designwirtschaft", "Architekturmarkt"]
+
+      for (var i = 1; i <= 12; i++) {
+
+        $('#nav').append('<div id="'+pad(i%12,2)+'" style="font-size:90%;color:white;"><img style="height:15px;" src="images/'+pad(i%12,2)+'.png"><span style="padding:3px;">'+names[i%12]+'</span></div>');
+
+        $('#'+pad(i%12,2)).hover(function() {
+          $(this).css('cursor','pointer');
+        });
+
+        $('#'+pad(i%12,2)).click(function(ev){
+          ev.preventDefault();
+          if ($('div.leaflet-marker-pane div.'+$(this).attr('id')).css("display") == "none") {
+            $('div.leaflet-shadow-pane div.'+$(this).attr('id')).show();
+            $('div.leaflet-marker-pane div.'+$(this).attr('id')).show();
+          } else {
+            $('div.leaflet-shadow-pane div.'+$(this).attr('id')).hide();
+            $('div.leaflet-marker-pane div.'+$(this).attr('id')).hide();
+          }
+
+          if($(this).css('color') == "rgb(255, 255, 255)") {
+            $(this).children('img').css('opacity', '0.6');
+            $(this).children('img').css('filter', 'alpha(opacity=60)');
+            $(this).css('color', '#888');
+          } else {
+            $(this).children('img').css('opacity', '');
+            $(this).children('img').css('filter', '');
+            $(this).css('color', 'white');
+          }
+        })
+      }
+
+      $('#nav').append('<p style="margin-top:10px;font-size:70%;color:#CCC">Bitte auf einzelne Teilmärkte<br>klicken, um sie auf der Karte<br>ein- und auszublenden.</p>');
     });
-	</script>
+    </script>
+
 </body>
 </html>
-

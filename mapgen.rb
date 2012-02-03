@@ -4,7 +4,7 @@ require 'rubygems'
 require 'rest_client'
 require 'json'
 
-API_KEY = '...'
+API_KEY = 'k8uVhyYZkSz8zlDbYGw'
 
 head = File.read("head.html")
 foot = File.read("foot.html")
@@ -58,6 +58,8 @@ begin
       c += "</p>"
     end
     str += "marker.bindPopup('#{c}');\n"
+    str += "$('div.leaflet-shadow-pane img:last-child').addClass('#{"%02d" % branch}');\n"
+    str += "$('div.leaflet-marker-pane img:last-child').addClass('#{"%02d" % branch}');\n"
   end
 
   puts "writing file..."
