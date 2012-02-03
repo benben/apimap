@@ -3,7 +3,7 @@
 <head>
 	<title>Unternehmenskarte der Stadt Leipzig erzeugt aus API.Leipzig Daten</title>
 	<meta charset="utf-8" />
-	
+
 	<link rel="stylesheet" href="leaflet/dist/leaflet.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="leaflet/dist/leaflet.ie.css" /><![endif]-->
 	<style type="text/css">
@@ -14,7 +14,7 @@
 
 	  #info {
 		  position: absolute;
-		  bottom: 0px;		
+		  bottom: 0px;
 	  }
 	</style>
 </head>
@@ -33,11 +33,28 @@
 		    $("#map").height($(window).height());// - 150);
       });
 
+      var LeafIcon = L.Icon.extend({
+        iconUrl: 'images/00.png'
+      });
+
+      var icon_00 = new LeafIcon();
+      var icon_01 = new LeafIcon('images/01.png');
+      var icon_02 = new LeafIcon('images/02.png');
+      var icon_03 = new LeafIcon('images/03.png');
+      var icon_04 = new LeafIcon('images/04.png');
+      var icon_05 = new LeafIcon('images/05.png');
+      var icon_06 = new LeafIcon('images/06.png');
+      var icon_07 = new LeafIcon('images/07.png');
+      var icon_08 = new LeafIcon('images/08.png');
+      var icon_09 = new LeafIcon('images/09.png');
+      var icon_10 = new LeafIcon('images/10.png');
+      var icon_11 = new LeafIcon('images/11.png');
+
       var map = new L.Map('map');
-		
+
 		  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 		  osmAttribution = '<a target="_blank" href="http://www.openstreetmap.org/">Karte hergestellt aus OpenStreetMap-Daten</a> | Lizenz: <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons BY-SA 2.0</a>',
 		  osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
-		
+
 		  map.setView(new L.LatLng(51.338, 12.375), 13).addLayer(osm);
 
