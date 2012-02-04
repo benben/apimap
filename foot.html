@@ -1,8 +1,8 @@
 // ############### END OF DATA ################
 
-$(".leaflet-top.leaflet-left").prepend('<div id="nav" class="leaflet-control-zoom leaflet-control"></div>');
+$(".leaflet-top.leaflet-left").prepend('<div id="nav_wrapper"><div id="nav" style="width:100%;" class="leaflet-control-zoom leaflet-control"></div></div>');
 
-$(".leaflet-top.leaflet-left").prepend('<div id="head" style="color:white;font-weight:bold;font-size:100%;" class="leaflet-control-zoom leaflet-control"><br>Medienunternehmen<br>der Stadt Leipzig</div>');
+$("#nav_wrapper").prepend('<div id="head" style="width:100%;color:white;font-weight:bold;font-size:110%;" class="leaflet-control-zoom leaflet-control"><br>Medienunternehmen<br>der Stadt Leipzig</div>');
 
 $(".leaflet-control-zoom.leaflet-control").css("background-color","rgba(0,0,0,0.75)");
 
@@ -81,7 +81,7 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
         }
       });
       $(".leaflet-top.leaflet-left").css("top", - $("#head").height()/2);
-      $("#head").css("width", $("#nav").width());
+
 
       $('#nav').append('<p style="margin-left:12px;margin-top:10px;font-size:70%;color:#BBB;">Bitte auf einzelne Teilmärkte<br>klicken, um sie auf der Karte<br>ein- und auszublenden.</p>');
     });
