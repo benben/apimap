@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Unternehmenskarte der Stadt Leipzig erzeugt aus API.Leipzig Daten</title>
-	<meta charset="utf-8" />
+  <title>Unternehmenskarte der Stadt Leipzig erzeugt aus API.Leipzig Daten</title>
+  <meta charset="utf-8" />
 
-	<link rel="stylesheet" href="leaflet/dist/leaflet.css" />
-	<!--[if lte IE 8]><link rel="stylesheet" href="leaflet/dist/leaflet.ie.css" /><![endif]-->
-	<style type="text/css">
-	  * {
-		  margin: 0px;
-		  padding: 0px;
-	  }
+  <link rel="stylesheet" href="leaflet/dist/leaflet.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="leaflet/dist/leaflet.ie.css" /><![endif]-->
+  <style type="text/css">
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
 
-	  #info {
-		  position: absolute;
-		  bottom: 0px;
-	  }
-	</style>
+    #info {
+      position: absolute;
+      bottom: 0px;
+    }
+  </style>
 </head>
 <body>
-	<div id="map"></div>
-	<script src="leaflet/dist/leaflet.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <div id="map"></div>
+  <script src="leaflet/dist/leaflet.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
   <script type="text/javascript">
     $(function (){
       $("#map").width($(window).width());
-	    $("#map").height($(window).height());// - 150);
+      $("#map").height($(window).height());// - 150);
 
       $(window).resize(function() {
         $("#map").width($(window).width());
-		    $("#map").height($(window).height());// - 150);
+        $("#map").height($(window).height());// - 150);
       });
 
       var LeafIcon = L.Icon.extend({
@@ -52,12 +52,12 @@
 
       var map = new L.Map('map');
 
-		  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-		  osmAttribution = '<a target="_blank" href="http://www.openstreetmap.org/">Karte hergestellt aus OpenStreetMap-Daten</a> | Lizenz: <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons BY-SA 2.0</a>',
-		  osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
+      var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      osmAttribution = 'Daten: API.Leipzig - <a target="_blank" href="http://www.apileipzig.de">http://www.apileipzig.de</a> | <a target="_blank" href="http://www.openstreetmap.org/">Karte hergestellt aus OpenStreetMap-Daten</a> (Lizenz: <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons BY-SA 2.0</a>)',
+      osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
 
-		  map.setView(new L.LatLng(51.338, 12.375), 13).addLayer(osm);
-
+      map.setView(new L.LatLng(51.338, 12.375), 13).addLayer(osm);
+      // ############## BEGIN DATA ######################################
 var markerLocation = new L.LatLng(51.3322799, 12.40365135), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Leipziger Universitätsverlag GmbH und Akademische Verlagsanstalt AVA</h3><p>Oststraße 41<br>04317 Leipzig<br><br>E-Mail: info@univerlag-leipzig.de<br>WWW: <a href="http://www.univerlag-leipzig.de">http://www.univerlag-leipzig.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
@@ -94,7 +94,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3782830333333, 12.7402394333333), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>SYSDRAI AG Datensysteme und Multimedia AG</h3><p>Friedrich-Ebert-Straße 61<br>04109 Leipzig<br><br>E-Mail: hello@sysdrai.de<br>WWW: <a href="http://www.sysdrai.de">http://www.sysdrai.de</a></p><h3>WBS IT-Service GmbH</h3><p>Friedrich-Ebert-Str. 61<br>04109 Leipzig<br><br>E-Mail: info@wbs-it.de<br>WWW: <a href="http://www.wbs-it.de">http://www.wbs-it.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
-var markerLocation = new L.LatLng(51.338974854363, 12.3443406090061), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Isolde HAMM Grafikerin</h3><p>Jahnallee 36<br>04109 Leipzig<br><br>E-Mail: </p><h3>Grafikdesign CONNY KLEMM</h3><p>Jahnallee 21<br>04109 Leipzig<br><br>E-Mail: </p><h3>META.DON</h3><p>Jahnallee 17<br>04109 Leipzig<br><br>E-Mail: doc-snyder@meta-don.de<br>WWW: <a href="http://www.meta-don.de">http://www.meta-don.de</a></p>');
+var markerLocation = new L.LatLng(51.338974854363, 12.3443406090061), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Isolde HAMM Grafikerin</h3><p>Jahnallee 36<br>04109 Leipzig</p><h3>Grafikdesign CONNY KLEMM</h3><p>Jahnallee 21<br>04109 Leipzig</p><h3>META.DON</h3><p>Jahnallee 17<br>04109 Leipzig<br><br>E-Mail: doc-snyder@meta-don.de<br>WWW: <a href="http://www.meta-don.de">http://www.meta-don.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3659372257729, 12.383683127369), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Schmidt-Römhild Verlagsgesellschaft mbH Leipzig</h3><p>Coppistraße 2<br>04129 Leipzig<br><br>E-Mail: leipzig@schmidt-roemhild.de<br>WWW: <a href="http://www.schmidt-roemhild.de">http://www.schmidt-roemhild.de</a></p>');
@@ -103,13 +103,13 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3143547856019, 12.372710596619), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>HTWK Hochschule für Technik Wirtschaft und Kultur Leipzig</h3><p>Karl-Liebknecht-Straße 132<br>04277 Leipzig<br><br>E-Mail: rektor@htwk-leipzig.de<br>WWW: <a href="http://www.htwk-leipzig.de">http://www.htwk-leipzig.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3693243235354, 12.7352433668238), marker = new L.Marker(markerLocation, {icon: icon_08}); map.addLayer(marker);marker.bindPopup('<h3>Blüthner im Alten Rathaus</h3><p>Markt 1<br>04109 Leipzig<br><br>E-Mail: shop@bluethner.de<br>WWW: <a href="http://www.bluethner.de/leipzig">http://www.bluethner.de/leipzig</a></p><h3>Verlagsbuchhandlung Bachmann</h3><p>Markt 1 (Altes Rathaus)<br>04109 Leipzig<br><br>E-Mail: <br>WWW: <a href="http://www.bachmann-buch-leipzig.de/">http://www.bachmann-buch-leipzig.de/</a></p>');
+var markerLocation = new L.LatLng(51.3693243235354, 12.7352433668238), marker = new L.Marker(markerLocation, {icon: icon_08}); map.addLayer(marker);marker.bindPopup('<h3>Blüthner im Alten Rathaus</h3><p>Markt 1<br>04109 Leipzig<br><br>E-Mail: shop@bluethner.de<br>WWW: <a href="http://www.bluethner.de/leipzig">http://www.bluethner.de/leipzig</a></p><h3>Verlagsbuchhandlung Bachmann</h3><p>Markt 1 (Altes Rathaus)<br>04109 Leipzig<br>WWW: <a href="http://www.bachmann-buch-leipzig.de/">http://www.bachmann-buch-leipzig.de/</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('08');
 $('div.leaflet-marker-pane img:last-child').addClass('08');
 var markerLocation = new L.LatLng(51.3289483298072, 12.3227706133516), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Thomas Verlag und Druckerei GmbH</h3><p>Karl-Heine-Straße 112<br>04229 Leipzig<br><br>E-Mail: info@thomasdruck.de<br>WWW: <a href="http://www.thomasdruck.de">http://www.thomasdruck.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3174468150917, 12.3173324116813), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Kleines Werbeteam</h3><p>Diezmannstraße 20<br>04207 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3174468150917, 12.3173324116813), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Kleines Werbeteam</h3><p>Diezmannstraße 20<br>04207 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3258488733196, 12.4145457329168), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>TVC Videokommunikations- und Produktions GmbH</h3><p>Melscher Straße 1<br>04299 Leipzig<br><br>E-Mail: tvc@tvc.de<br>WWW: <a href="http://www.tvc.de">http://www.tvc.de</a></p><h3>Dürbeck Beschriftungen</h3><p>Melscher Straße 1<br>04299 Leipzig<br><br>E-Mail: c.duerbeck@t-online.de<br>WWW: <a href="http://www.duerbeck-beschriftungen.de">http://www.duerbeck-beschriftungen.de</a></p><h3>Verband Druck und Medien Sachsen, Thüringen, Sachsen-Anhalt</h3><p>Melscher Straße 1<br>04299 Leipzig<br><br>E-Mail: info@vdmsta.de<br>WWW: <a href="http://www.vdmsta.de">http://www.vdmsta.de</a></p><h3>Druckerei Karlheinz Koch</h3><p>Melscher Straße 1<br>04299 Leipzig<br><br>E-Mail: info@druck-koch.de</p><h3>CosiFan Computersysteme GmbH</h3><p>Melscher Straße 1<br>04299 Leipzig<br><br>E-Mail: vertrieb@cosifan.de<br>WWW: <a href="http://www.cosifan.de">http://www.cosifan.de</a></p><h3>REPROFLEX GMBH Leipzig</h3><p>Melscher Straße 1<br>04299 Leipzig<br><br>E-Mail: leipzig@reproflex.de<br>WWW: <a href="http://www.reproflex.de">http://www.reproflex.de</a></p><h3>OPS Netzwerk GmbH</h3><p>Melscher Str. 1<br>04299 Leipzig<br><br>E-Mail: info@op-pt.de<br>WWW: <a href="http://www.pt-magazin.de">http://www.pt-magazin.de</a></p>');
@@ -130,13 +130,13 @@ $('div.leaflet-marker-pane img:last-child').addClass('03');
 var markerLocation = new L.LatLng(51.3290976, 12.3437185), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Offizin Haag-Drugulin Grafischer Betrieb GmbH</h3><p>Nonnenstraße 38<br>04229 Leipzig<br><br>E-Mail: eckehart@schumachergebler.com<br>WWW: <a href="http://www.offizin-haag-drugulin.de">http://www.offizin-haag-drugulin.de</a></p><h3>Lichtdruck-Kunst Leipzig e.V.</h3><p>Nonnenstraße 38<br>04229 Leipzig<br><br>E-Mail: web-admin@lichtdruck.de<br>WWW: <a href="http://www.Lichtdruck.de">http://www.Lichtdruck.de</a></p><h3>Stiftung Werkstattmuseum für Druckkunst Leipzig</h3><p>Nonnenstraße 38<br>04229 Leipzig<br><br>E-Mail: info@druckkunst-museum.de<br>WWW: <a href="http://www.druckkunst-museum.de">http://www.druckkunst-museum.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3585567019291, 12.2608817459256), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>Roselind Czernetzki Grafik-Designer BDG</h3><p>Schkeuditzer Straße 30<br>04178 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3585567019291, 12.2608817459256), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>Roselind Czernetzki Grafik-Designer BDG</h3><p>Schkeuditzer Straße 30<br>04178 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('10');
 $('div.leaflet-marker-pane img:last-child').addClass('10');
 var markerLocation = new L.LatLng(51.3264354, 12.3177634), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Gutenberg Verlag und Druckerei GmbH</h3><p>Spinnereistraße 7 (Halle 18)<br>04179 Leipzig<br><br>E-Mail: aloehr@gvdleipzig.de<br>WWW: <a href="http://www.gvdleipzig.de">http://www.gvdleipzig.de</a></p><h3>ad orange gmbH</h3><p>Spinnereistraße 7<br>04179 Leipzig<br><br>E-Mail: kontakt@ad-orange.de<br>WWW: <a href="http://www.ad-orange.de">http://www.ad-orange.de</a></p><h3>plan.d GbR | Planungsbüro für digitale Architekturen</h3><p>Spinnereistraße 7 Geb 21B PF217<br>04179 Leipzig<br><br>E-Mail: info@plan-d.de<br>WWW: <a href="http://www.plan-d.de">http://www.plan-d.de</a></p><h3>TowerByte Leipzig eG</h3><p>Spinnereistraße 7 /319<br>04179 Leipzig<br><br>E-Mail: info@towerbyte-leipzig.de<br>WWW: <a href="http://www.towerbyte-leipzig.de">http://www.towerbyte-leipzig.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3088634048338, 12.3729116316241), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchhandlung W.- Otto Nachfahren</h3><p>Wolfgang-Heinze-Straße 12 a<br>04277 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3088634048338, 12.3729116316241), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchhandlung W.- Otto Nachfahren</h3><p>Wolfgang-Heinze-Straße 12 a<br>04277 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3361471, 12.33291455), marker = new L.Marker(markerLocation, {icon: icon_06}); map.addLayer(marker);marker.bindPopup('<h3>Kabarett Leipziger Brettl - Kleine Wintergartenbühne im Gambrinus</h3><p>Odermannstraße 12<br>04177 Leipzig<br><br>E-Mail: kartenbestellung@leipzigerbrettl.de<br>WWW: <a href="http://www.leipzigerbrettl.de">http://www.leipzigerbrettl.de</a></p>');
@@ -148,7 +148,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3705866562224, 12.7447471682975), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>MONADE - Agentur für Kommunikation GmbH</h3><p>Mozartstraße 4<br>04107 Leipzig<br><br>E-Mail: monade@monade.com<br>WWW: <a href="http://www.monade.com">http://www.monade.com</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.3354466641083, 12.4848587723594), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>WERBEATELIER Jürgen Schindler, Diplom-Designer (FH)</h3><p>Engelsdorfer Straße 16<br>04425 Taucha<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3354466641083, 12.4848587723594), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>WERBEATELIER Jürgen Schindler, Diplom-Designer (FH)</h3><p>Engelsdorfer Straße 16<br>04425 Taucha</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3236353535175, 12.3248283329248), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>Alte Damenhandschuhfabrik</h3><p>Klingenstraße 20<br>04229 Leipzig<br><br>E-Mail: info@damenhandschuhfabrik.de<br>WWW: <a href="http://www.damenhandschuhfabrik.de">http://www.damenhandschuhfabrik.de</a></p>');
@@ -157,19 +157,19 @@ $('div.leaflet-marker-pane img:last-child').addClass('01');
 var markerLocation = new L.LatLng(51.345837263101, 12.393517143113), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Fortbildungsakademie der WIRTSCHAFT g GmbH</h3><p>Rosa-Luxemburg-Straße 29<br>04103 Leipzig<br><br>E-Mail: akademie@saw-leipzig.de<br>WWW: <a href="http://www.faw.de">http://www.faw.de</a></p><h3>GLASWALD Informatik GmbH</h3><p>Rosa-Luxemburg-Straße 32<br>04103 Leipzig<br><br>E-Mail: info@glaswald.de<br>WWW: <a href="http://www.glaswald.de">http://www.glaswald.de</a></p><h3>EAST IMPACT FOR MEDIA GMBH</h3><p>Rosa-Luxemburg-straße 29<br>04103 Leipzig<br><br>E-Mail: info@east-impact.de<br>WWW: <a href="http://www.east-impact.de">http://www.east-impact.de</a></p><h3>Union Sicherheit und Service</h3><p>Rosa-Luxemburg-Straße 27<br>04103 Leipzig<br><br>E-Mail: info@union-sicherheit.de<br>WWW: <a href="http://www.union-sicherheit.de">http://www.union-sicherheit.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3411992, 12.3740125), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Ticketgalerie - Gesellschaft für Veranstaltungsmanagement und -marketing mbH</h3><p>Hainstraße 1<br>04109 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3411992, 12.3740125), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Ticketgalerie - Gesellschaft für Veranstaltungsmanagement und -marketing mbH</h3><p>Hainstraße 1<br>04109 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.3784587498957, 12.4846377412376), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Kopier- und Bindewerkstatt Steffen Zschämisch</h3><p>Weststraße 9<br>04425 Taucha<br><br>E-Mail: zschaemisch@web.de</p><h3>Seidel Verpackungen GmbH</h3><p>Weststraße 9<br>04425 Taucha<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3784587498957, 12.4846377412376), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Kopier- und Bindewerkstatt Steffen Zschämisch</h3><p>Weststraße 9<br>04425 Taucha<br><br>E-Mail: zschaemisch@web.de</p><h3>Seidel Verpackungen GmbH</h3><p>Weststraße 9<br>04425 Taucha</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3468978931016, 12.2504264499676), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>SCHUBERT-Verlag e.K.</h3><p>Sandberg 26<br>04178 Leipzig<br><br>E-Mail: info@schubert-verlag.de<br>WWW: <a href="http://www.schubert-verlag.de">http://www.schubert-verlag.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.2770720592285, 12.3717001322855), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Christliche Bücher und Musik</h3><p>Hohe Straße 41<br>04107 Leipzig<br><br>E-Mail: </p><h3>Druckerei Jörg Hensel</h3><p>Hohe Straße 11<br>04107 Leipzig<br><br>E-Mail: hensel.druckerei@t-online.de</p><h3>Seidenglanz/Partner</h3><p>Hohe Str. 26<br>04107 Leipzig<br><br>E-Mail: info@pr-seidenglanz.de<br>WWW: <a href="http://www.pr-seidenglanz.de">http://www.pr-seidenglanz.de</a></p>');
+var markerLocation = new L.LatLng(51.2770720592285, 12.3717001322855), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Christliche Bücher und Musik</h3><p>Hohe Straße 41<br>04107 Leipzig</p><h3>Druckerei Jörg Hensel</h3><p>Hohe Straße 11<br>04107 Leipzig<br><br>E-Mail: hensel.druckerei@t-online.de</p><h3>Seidenglanz/Partner</h3><p>Hohe Str. 26<br>04107 Leipzig<br><br>E-Mail: info@pr-seidenglanz.de<br>WWW: <a href="http://www.pr-seidenglanz.de">http://www.pr-seidenglanz.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3444498803282, 12.3574978078466), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchbindewerkstatt Albrecht Adler</h3><p>Waldstraße 23<br>04105 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.0636198514466, 12.5584768915573), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchbindewerkstatt Albrecht Adler</h3><p>Waldstraße 23<br>04105 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.32516425, 12.3698418), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>GBS - Fachschule für Technik und Wirtschaft</h3><p>Mahlmannstraße 1 -3<br>04107 Leipzig<br><br>E-Mail: info@gbsleipzig.de<br>WWW: <a href="http://www.gbsleipzig.de">http://www.gbsleipzig.de</a></p><h3>DIGITAL SYSTEMS GmbH</h3><p>Mahlmannstraße 1 -3<br>04107 Leipzig<br><br>E-Mail: info@disy.de<br>WWW: <a href="http://www.disy.de">http://www.disy.de</a></p><h3>eXclusiveOR / DIGITAL SYSTEMS GmbH</h3><p>Mahlmannstraße 1 -3<br>04107 Leipzig<br><br>E-Mail: info@eXclusiveOR.de<br>WWW: <a href="http://www.eXclusiveOR.de">http://www.eXclusiveOR.de</a></p>');
@@ -187,10 +187,10 @@ $('div.leaflet-marker-pane img:last-child').addClass('08');
 var markerLocation = new L.LatLng(51.2045303925581, 12.4584072018623), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>LKG Leipziger Kommissions- und Großbuchhandelsgesellschaft mbH</h3><p>An der Südspitze 1 -12<br>04579 Espenhain<br><br>E-Mail: uhaft@lkg-service.de<br>WWW: <a href="http://www.lkg-va.de">http://www.lkg-va.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.4054639308855, 12.3900842234466), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Reprostudio Helmut Schneider</h3><p>Maximilianallee 17<br>04129 Leipzig<br><br>E-Mail: </p><h3>Gärtner Druck GmbH</h3><p>Maximilianallee 17<br>04129 Leipzig<br><br>E-Mail: buero@gaertnerdruck.de<br>WWW: <a href="http://www.gaertnerdruck.de">http://www.gaertnerdruck.de</a></p>');
+var markerLocation = new L.LatLng(51.4054639308855, 12.3900842234466), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Reprostudio Helmut Schneider</h3><p>Maximilianallee 17<br>04129 Leipzig</p><h3>Gärtner Druck GmbH</h3><p>Maximilianallee 17<br>04129 Leipzig<br><br>E-Mail: buero@gaertnerdruck.de<br>WWW: <a href="http://www.gaertnerdruck.de">http://www.gaertnerdruck.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3360168251594, 12.3397865983245), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchhandlung GRÜMMER</h3><p>Zschochersche Straße 18<br>04229 Leipzig<br><br>E-Mail: buchhandlung_gruemmer@t-online.de<br>WWW: <a href="http://www.buchhandlung-gruemmer.de">http://www.buchhandlung-gruemmer.de</a></p><h3>akzent Tonstudio GmbH</h3><p>Zschochersche Straße 79 b<br>04229 Leipzig<br><br>E-Mail: info@akzent-tonstudio.de<br>WWW: <a href="http://www.akzent-tonstudio.de">http://www.akzent-tonstudio.de</a></p><h3>Zentralantiquariat Leipzig GmbH</h3><p>Zschochersche Straße 79 e<br>04229 Leipzig<br><br>E-Mail: info@zentralantiquariat.de<br>WWW: <a href="http://www.zentralantiquariat.de">http://www.zentralantiquariat.de</a></p><h3>Marini CTT Tuning GmbH</h3><p>Zschocherschestraße 41 a<br>04229 Leipzig<br><br>E-Mail: office@hmtuning.com<br>WWW: <a href="http://www.hmtuning.com">http://www.hmtuning.com</a></p><h3>Antiquariat Dombrowski</h3><p>Zschochersche Straße 13<br>04229 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3360168251594, 12.3397865983245), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchhandlung GRÜMMER</h3><p>Zschochersche Straße 18<br>04229 Leipzig<br><br>E-Mail: buchhandlung_gruemmer@t-online.de<br>WWW: <a href="http://www.buchhandlung-gruemmer.de">http://www.buchhandlung-gruemmer.de</a></p><h3>akzent Tonstudio GmbH</h3><p>Zschochersche Straße 79 b<br>04229 Leipzig<br><br>E-Mail: info@akzent-tonstudio.de<br>WWW: <a href="http://www.akzent-tonstudio.de">http://www.akzent-tonstudio.de</a></p><h3>Zentralantiquariat Leipzig GmbH</h3><p>Zschochersche Straße 79 e<br>04229 Leipzig<br><br>E-Mail: info@zentralantiquariat.de<br>WWW: <a href="http://www.zentralantiquariat.de">http://www.zentralantiquariat.de</a></p><h3>Marini CTT Tuning GmbH</h3><p>Zschocherschestraße 41 a<br>04229 Leipzig<br><br>E-Mail: office@hmtuning.com<br>WWW: <a href="http://www.hmtuning.com">http://www.hmtuning.com</a></p><h3>Antiquariat Dombrowski</h3><p>Zschochersche Straße 13<br>04229 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3249450458107, 12.3732622217977), marker = new L.Marker(markerLocation, {icon: icon_06}); map.addLayer(marker);marker.bindPopup('<h3>Cinémathèque Leipzig e.V.</h3><p>Karl-Liebknecht-Straße 48<br>04275 Leipzig<br><br>E-Mail: info@cinematheque-leipzig.de<br>WWW: <a href="http://www.cinematheque-leipzig.de">http://www.cinematheque-leipzig.de</a></p>');
@@ -217,7 +217,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('06');
 var markerLocation = new L.LatLng(51.3397819, 12.3754881), marker = new L.Marker(markerLocation, {icon: icon_06}); map.addLayer(marker);marker.bindPopup('<h3>Kabarett-Theater SANFTWUT</h3><p>Grimmaische Straße 2 -4 (Mädler-Passage)<br>04109 Leipzig<br><br>E-Mail: post@kabarett-theater-sanftwut.de<br>WWW: <a href="http://www.kabarett-theater-sanftwut.de">http://www.kabarett-theater-sanftwut.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('06');
 $('div.leaflet-marker-pane img:last-child').addClass('06');
-var markerLocation = new L.LatLng(51.39705365, 12.3855739), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>art.media verlag</h3><p>Mohnweg 26<br>04158 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.39705365, 12.3855739), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>art.media verlag</h3><p>Mohnweg 26<br>04158 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('10');
 $('div.leaflet-marker-pane img:last-child').addClass('10');
 var markerLocation = new L.LatLng(51.3248347003352, 12.3796910069269), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>Thomm TV</h3><p>Körnerstraße 56<br>04107 Leipzig<br><br>E-Mail: studio@thommtv.de<br>WWW: <a href="http://www.thommtv.de">http://www.thommtv.de</a></p><h3>L.E. Vision Film- und Fernsehproduktion</h3><p>Körnerstraße 56<br>04107 Leipzig<br><br>E-Mail: info@levision.de<br>WWW: <a href="http://www.levision.de">http://www.levision.de</a></p><h3>Mitteldeutscher Film- und Fernsehproduzentenverband e.V.</h3><p>Körnerstraße 56<br>04107 Leipzig<br><br>E-Mail: info@mffv.de<br>WWW: <a href="http://www.mffv.de">http://www.mffv.de</a></p><h3>local heroes - agentur für filmservices GmbH</h3><p>Körnerstraße 56<br>04107 Leipzig<br><br>E-Mail: info@agentur-local-heroes.de<br>WWW: <a href="http://www.agentur-local-heroes.de">http://www.agentur-local-heroes.de</a></p>');
@@ -232,7 +232,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3350132, 12.3716879), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>HLkomm Telekommunikations GmbH</h3><p>Nonnenmühlgasse 1<br>04107 Leipzig<br><br>E-Mail: info@hlkomm.de<br>WWW: <a href="http://www.hlkomm.de">http://www.hlkomm.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
-var markerLocation = new L.LatLng(51.33974915, 12.3712303), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>Punctum Fotografie GmbH</h3><p>Gottschedstraße 12<br>04109 Leipzig<br><br>E-Mail: info@punctum.net<br>WWW: <a href="http://www.punctum.net">http://www.punctum.net</a></p><h3>Internet-Service Garcia-Greno</h3><p>Gottschedstraße 22<br>04109 Leipzig<br><br>E-Mail: <br>WWW: <a href="http://www.gold-garcia.de">http://www.gold-garcia.de</a></p><h3>FILMDIENSTLEISTUNGEN SÖREN von der HEYDE</h3><p>Gottschedstraße 44<br>04109 Leipzig<br><br>E-Mail: mail@filmdienstleistungen.de<br>WWW: <a href="http://www.filmdienstleistungen.de">http://www.filmdienstleistungen.de</a></p>');
+var markerLocation = new L.LatLng(51.33974915, 12.3712303), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>Punctum Fotografie GmbH</h3><p>Gottschedstraße 12<br>04109 Leipzig<br><br>E-Mail: info@punctum.net<br>WWW: <a href="http://www.punctum.net">http://www.punctum.net</a></p><h3>Internet-Service Garcia-Greno</h3><p>Gottschedstraße 22<br>04109 Leipzig<br>WWW: <a href="http://www.gold-garcia.de">http://www.gold-garcia.de</a></p><h3>FILMDIENSTLEISTUNGEN SÖREN von der HEYDE</h3><p>Gottschedstraße 44<br>04109 Leipzig<br><br>E-Mail: mail@filmdienstleistungen.de<br>WWW: <a href="http://www.filmdienstleistungen.de">http://www.filmdienstleistungen.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('10');
 $('div.leaflet-marker-pane img:last-child').addClass('10');
 var markerLocation = new L.LatLng(51.2809295792596, 12.4287049153649), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>Koch Datensysteme</h3><p>Apelsteinallee 12 -14<br>04416 Markkleeberg/Wachau<br><br>E-Mail: post@koch-datensysteme.de<br>WWW: <a href="http://www.koch-datensysteme.de">http://www.koch-datensysteme.de</a></p><h3>COD-DESIGN.de Werbung</h3><p>Apelsteinallee 10<br>04416 Markkleeberg<br><br>E-Mail: info@cod-design.de<br>WWW: <a href="http://www.cod-design.de">http://www.cod-design.de</a></p>');
@@ -256,13 +256,13 @@ $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3102139, 12.3987898), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>NetWork Computerschulungszentrum Leipzig</h3><p>Dohnaweg 5<br>04277 Leipzig<br><br>E-Mail: Rittenbach@freenet.de</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
-var markerLocation = new L.LatLng(51.3491691115828, 12.377388392808), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchhandlung Sturm</h3><p>Kurt-Schumacher-Straße 21<br>04105 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3491691115828, 12.377388392808), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchhandlung Sturm</h3><p>Kurt-Schumacher-Straße 21<br>04105 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3818127807588, 12.5021947930171), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>FROMOS GmbH</h3><p>Dewitzer Straße 26<br>04425 Taucha<br><br>E-Mail: info@fromos.de<br>WWW: <a href="http://www.FROMOS.DE">http://www.FROMOS.DE</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
-var markerLocation = new L.LatLng(51.3031442, 12.37455265), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>L III DESIGN</h3><p>Prinz-Eugen-Straße 5<br>04277 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3031442, 12.37455265), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>L III DESIGN</h3><p>Prinz-Eugen-Straße 5<br>04277 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('10');
 $('div.leaflet-marker-pane img:last-child').addClass('10');
 var markerLocation = new L.LatLng(51.3637080010695, 12.3737253841406), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Förderverein Heinrich-Budde-Haus e.V.</h3><p>Lützowstraße 19<br>04157 Leipzig<br><br>E-Mail: buddehaus@t-online.de<br>WWW: <a href="http://www.liebichs.de">http://www.liebichs.de</a></p>');
@@ -286,7 +286,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('05');
 var markerLocation = new L.LatLng(51.359113483935, 12.395467226911), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>DRUCKEREI Werner Hauck</h3><p>Hamburger Straße 22<br>04129 Leipzig<br><br>E-Mail: Druckerei_Werner_Hauck@t-online.de</p><h3>HANSA Computer GmbH</h3><p>Hamburger Str. 3<br>04129 Leipzig<br><br>E-Mail: info@hansa-computer.de<br>WWW: <a href="http://www.hansa-computer.de">http://www.hansa-computer.de</a></p><h3>Druckerei Krahl</h3><p>Hamburger Straße 8<br>04129 Leipzig<br><br>E-Mail: Druckerei_Krahl@t-online.de<br>WWW: <a href="http://www.druckerei-krahl-leipzig.de">http://www.druckerei-krahl-leipzig.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3726474024537, 12.3347468429804), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>Müller, Siegfried - Freier Journalist</h3><p>Christoph-Probst-Straße 14<br>04159 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3726474024537, 12.3347468429804), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>Müller, Siegfried - Freier Journalist</h3><p>Christoph-Probst-Straße 14<br>04159 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('03');
 $('div.leaflet-marker-pane img:last-child').addClass('03');
 var markerLocation = new L.LatLng(51.2278584777853, 12.7191663164023), marker = new L.Marker(markerLocation, {icon: icon_06}); map.addLayer(marker);marker.bindPopup('<h3>theaterkompanieleipzig GbR</h3><p>Göschenstraße 12<br>04317 Leipzig<br><br>E-Mail: info@theaterkompanie.de<br>WWW: <a href="http://www.theaterkompanie.de">http://www.theaterkompanie.de</a></p>');
@@ -298,7 +298,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3158897181416, 12.4134260404531), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Minnemedia Studio für Werbung und Kommunikation</h3><p>Schönbachstraße 10<br>04299 Leipzig<br><br>E-Mail: leipzig@minnemedia.com<br>WWW: <a href="http://www.minnemedia.de">http://www.minnemedia.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.3470611642501, 12.4941576044021), marker = new L.Marker(markerLocation, {icon: icon_11}); map.addLayer(marker);marker.bindPopup('<h3>IPL Project Engineering Leipzig GmbH</h3><p>Riesaer Straße 100<br>04319 Leipzig<br><br>E-Mail: ipl.leipzig@t-online.de<br>WWW: <a href="http://www.ipl-leipzig.de">http://www.ipl-leipzig.de</a></p><h3>Foto Clauss</h3><p>Riesaer Straße 31<br>04328 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3470611642501, 12.4941576044021), marker = new L.Marker(markerLocation, {icon: icon_11}); map.addLayer(marker);marker.bindPopup('<h3>IPL Project Engineering Leipzig GmbH</h3><p>Riesaer Straße 100<br>04319 Leipzig<br><br>E-Mail: ipl.leipzig@t-online.de<br>WWW: <a href="http://www.ipl-leipzig.de">http://www.ipl-leipzig.de</a></p><h3>Foto Clauss</h3><p>Riesaer Straße 31<br>04328 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('11');
 $('div.leaflet-marker-pane img:last-child').addClass('11');
 var markerLocation = new L.LatLng(51.3144462654968, 12.3786329106838), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Mahmoud Dabdoub - Diplom Fotograf</h3><p>Arthur-Hoffmann-Straße 141<br>04277 Leipzig<br><br>E-Mail: mahmoud.dabdaoub@freenet.de<br>WWW: <a href="http://www.dabdaoub.de">http://www.dabdaoub.de</a></p>');
@@ -361,7 +361,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3251625714704, 12.3407582063851), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Druckerei KNOTT</h3><p>Holbeinstraße 29<br>04229 Leipzig<br><br>E-Mail: DRUCKEREIKNOTT@aol.com</p><h3>development 9  architektur design medien</h3><p>Holbeinstraße 29<br>04229 Leipzig<br><br>E-Mail: f.waltke@development-9.de<br>WWW: <a href="http://www.development-9.de">http://www.development-9.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3050262924999, 12.4384525371705), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>Gebrauchsgrafiker Jochen Busch</h3><p>Russenstraße 68<br>04289 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3050262924999, 12.4384525371705), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>Gebrauchsgrafiker Jochen Busch</h3><p>Russenstraße 68<br>04289 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('10');
 $('div.leaflet-marker-pane img:last-child').addClass('10');
 var markerLocation = new L.LatLng(51.3220933326355, 12.4943166984993), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>VSR Verlag - Satz- und Repro GmbH</h3><p>An der Hebemärchte 5<br>04316 Leipzig<br><br>E-Mail: mail@vsr-gmbh.de<br>WWW: <a href="http://www.vsr-gmbh.de">http://www.vsr-gmbh.de</a></p>');
@@ -379,7 +379,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('01');
 var markerLocation = new L.LatLng(51.3986499748349, 12.377542788235), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Stephan Werbung</h3><p>Stentzlerstraße 102<br>04158 Leipzig<br><br>E-Mail: info@stephanwerbung.de<br>WWW: <a href="http://www.stephanwerbung.de">http://www.stephanwerbung.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.5602138, 13.000748), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Colberg Werbetechnik GmbH</h3><p>Wittenberger Straße 5<br>04129 Leipzig<br><br>E-Mail: colbergwerbung@t-online.de</p>');
+var markerLocation = new L.LatLng(51.55995505, 13.00151165), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Colberg Werbetechnik GmbH</h3><p>Wittenberger Straße 5<br>04129 Leipzig<br><br>E-Mail: colbergwerbung@t-online.de</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3425846, 12.3784347), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>KREUZER  Medien GmbH</h3><p>Brühl 54<br>04109 Leipzig<br><br>E-Mail: info@kreuzer-leipzig.de<br>WWW: <a href="http://kreuzer-leipzig.de">http://kreuzer-leipzig.de</a></p>');
@@ -394,7 +394,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('01');
 var markerLocation = new L.LatLng(51.3432495, 12.38749815), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>SINUS-WERBETECHNIK DIETMAR LAUBE</h3><p>Chopinstraße 7<br>04103 Leipzig<br><br>E-Mail: sinusWTL@t-online.de</p><h3>VUB Printmedia GmbH</h3><p>Chopinstraße 4<br>04103 Leipzig<br><br>E-Mail: rmatthiae@vub.de<br>WWW: <a href="http://www.vub.de">http://www.vub.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.3257797357589, 12.3407901127431), marker = new L.Marker(markerLocation, {icon: icon_06}); map.addLayer(marker);marker.bindPopup('<h3>Eberhard Löbel Dipl. Maler/Grafiker</h3><p>Industriestraße 31<br>04229 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3257797357589, 12.3407901127431), marker = new L.Marker(markerLocation, {icon: icon_06}); map.addLayer(marker);marker.bindPopup('<h3>Eberhard Löbel Dipl. Maler/Grafiker</h3><p>Industriestraße 31<br>04229 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('06');
 $('div.leaflet-marker-pane img:last-child').addClass('06');
 var markerLocation = new L.LatLng(51.3406761, 12.3697364), marker = new L.Marker(markerLocation, {icon: icon_06}); map.addLayer(marker);marker.bindPopup('<h3>Schauspiel Leipzig</h3><p>Bosestraße 1<br>04109 Leipzig<br><br>E-Mail: info@schauspiel-leipzig.de<br>WWW: <a href="http://www.schauspiel-leipzig.de">http://www.schauspiel-leipzig.de</a></p>');
@@ -418,7 +418,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('10');
 var markerLocation = new L.LatLng(51.3541512968103, 12.4162130000243), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Karl Oette Retuschemeister</h3><p>Seipelweg 24<br>04347 Leipzig<br><br>E-Mail: karl.oette@freenet.de</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.32023345, 12.33012355), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchhandlung am Adler</h3><p>Dieskaustraße 10<br>04229 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.32023345, 12.33012355), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Buchhandlung am Adler</h3><p>Dieskaustraße 10<br>04229 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.1463269776749, 12.6606178115675), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>Jugendpresse Sachsen e.V.</h3><p>Lessingstraße 7<br>04109 Leipzig<br><br>E-Mail: jps@jugendpresse.de<br>WWW: <a href="http://www.jugendpresse-sachsen.de">http://www.jugendpresse-sachsen.de</a></p><h3>Multi-Medienwerkstatt für Kinder und Jugendliche</h3><p>Lessingstraße 7<br>04109 Leipzig<br><br>E-Mail: kontakt@medienwerkstatt-leipzig.de<br>WWW: <a href="http://www.medienwerkstatt-leipzig.de">http://www.medienwerkstatt-leipzig.de</a></p>');
@@ -463,7 +463,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3587191, 12.3583327), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>LIEBIG DESIGN</h3><p>Weinligstraße 9<br>04155 Leipzig<br><br>E-Mail: futura@liebigdesign.de</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('10');
 $('div.leaflet-marker-pane img:last-child').addClass('10');
-var markerLocation = new L.LatLng(51.310057128245, 12.3713328476493), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Werk II Kulturfabrik Leipzig e.V.</h3><p>Kochstraße 132<br>04277 Leipzig<br><br>E-Mail: jenslu@werk-2.de<br>WWW: <a href="http://www.werk-2.de">http://www.werk-2.de</a></p><h3>KULTURBOGEN GmbH</h3><p>Kochstraße 132<br>04277 Leipzig<br><br>E-Mail: </p><h3>Gesellschaft für Völkerverständigung e. V.</h3><p>Kochstraße 132<br>04277 Leipzig<br><br>E-Mail: info@gfvv-leipzig.de<br>WWW: <a href="http://www.gfvv-leipzig.de">http://www.gfvv-leipzig.de</a></p><h3>Glücklicher Montag - AGM Leipzig GmbH</h3><p>Kochstraße 132<br>04277 Leipzig<br><br>E-Mail: s.strauss@gluecklicher-montag.de<br>WWW: <a href="http://www.gluecklicher-montag.de">http://www.gluecklicher-montag.de</a></p>');
+var markerLocation = new L.LatLng(51.310057128245, 12.3713328476493), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Werk II Kulturfabrik Leipzig e.V.</h3><p>Kochstraße 132<br>04277 Leipzig<br><br>E-Mail: jenslu@werk-2.de<br>WWW: <a href="http://www.werk-2.de">http://www.werk-2.de</a></p><h3>KULTURBOGEN GmbH</h3><p>Kochstraße 132<br>04277 Leipzig</p><h3>Gesellschaft für Völkerverständigung e. V.</h3><p>Kochstraße 132<br>04277 Leipzig<br><br>E-Mail: info@gfvv-leipzig.de<br>WWW: <a href="http://www.gfvv-leipzig.de">http://www.gfvv-leipzig.de</a></p><h3>Glücklicher Montag - AGM Leipzig GmbH</h3><p>Kochstraße 132<br>04277 Leipzig<br><br>E-Mail: s.strauss@gluecklicher-montag.de<br>WWW: <a href="http://www.gluecklicher-montag.de">http://www.gluecklicher-montag.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3770726584083, 12.3213779794591), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>St. Benno Buch- und Zeitschriftenverlagsgesellschaft mbH</h3><p>Stammerstraße 11<br>04159 Leipzig<br><br>E-Mail: service@st-benno.de<br>WWW: <a href="http://www.st-benno.de">http://www.st-benno.de</a></p>');
@@ -526,7 +526,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3223067643143, 12.3966374491794), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Deutsche Nationalbibliothek</h3><p>Deutscher Platz 1<br>04103 Leipzig<br><br>E-Mail: a.koschnick@d-nb.de<br>WWW: <a href="http://www.d-nb.de">http://www.d-nb.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.5300669616669, 12.3578359762955), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>PENTA-POINT Leipzig GmbH</h3><p>Käthe-Kollwitz-Straße 5<br>04109 Leipzig<br><br>E-Mail: info@pentapoint.net<br>WWW: <a href="http://www.pentapoint.net">http://www.pentapoint.net</a></p><h3>MARKETING/VERTRIEB Dr.-Ing. Lothar Krägelin</h3><p>Käthe-Kollwitz-Straße 37<br>04109 Leipzig<br><br>E-Mail: </p><h3>Visionauten GbR, Winter Ohm Janetzky GbR</h3><p>Käthe-Kollwitz-Straße 60<br>04109 Leipzig<br><br>E-Mail: info@virtupass.de<br>WWW: <a href="http://www.virtupass.de">http://www.virtupass.de</a></p>');
+var markerLocation = new L.LatLng(51.5300669616669, 12.3578359762955), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>PENTA-POINT Leipzig GmbH</h3><p>Käthe-Kollwitz-Straße 5<br>04109 Leipzig<br><br>E-Mail: info@pentapoint.net<br>WWW: <a href="http://www.pentapoint.net">http://www.pentapoint.net</a></p><h3>MARKETING/VERTRIEB Dr.-Ing. Lothar Krägelin</h3><p>Käthe-Kollwitz-Straße 37<br>04109 Leipzig</p><h3>Visionauten GbR, Winter Ohm Janetzky GbR</h3><p>Käthe-Kollwitz-Straße 60<br>04109 Leipzig<br><br>E-Mail: info@virtupass.de<br>WWW: <a href="http://www.virtupass.de">http://www.virtupass.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3677893560639, 12.3781528290643), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Dr. Hans-Peter Gerhardt Managementtraining und Personalberatung</h3><p>Krokerstraße 20<br>04157 Leipzig<br><br>E-Mail: info@dr-gerhardt-training.de<br>WWW: <a href="www.dr-gerhardt-training.de">www.dr-gerhardt-training.de</a></p><h3>1A WIEL Videoproduktion™</h3><p>Krokerstrasse 26<br>04157 Leipzig<br><br>E-Mail: info@wiel.org<br>WWW: <a href="http://www.wiel.org">http://www.wiel.org</a></p>');
@@ -553,10 +553,10 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3128755, 12.3760638), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>Deutsche Telekom AG Hochschule für Telekommunikation Leipzig</h3><p>Gustav-Freytag-Straße 43 -45<br>04277 Leipzig<br><br>E-Mail: schlayer@fh-telekom-leipzig.de<br>WWW: <a href="http://www.fh-telekom-leipzig.de">http://www.fh-telekom-leipzig.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
-var markerLocation = new L.LatLng(51.3268327246257, 12.4764095069459), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Druckerei  Braunsdorf</h3><p>Zum Alten Wasserwerk 8<br>04316 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3268327246257, 12.4764095069459), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Druckerei  Braunsdorf</h3><p>Zum Alten Wasserwerk 8<br>04316 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3441015990237, 12.5381769078938), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>Liane Fröhlich Grafik-Design</h3><p>Heinrich-Heine-Straße 20<br>04451 Borsdorf<br><br>E-Mail: </p><h3>PATTERN EXPERT</h3><p>Heinrich-Heine-Straße 12<br>04451 Borsdorf<br><br>E-Mail: info@pattern-expert.de<br>WWW: <a href="http://www.pattern-expert.de">http://www.pattern-expert.de</a></p>');
+var markerLocation = new L.LatLng(51.3441015990237, 12.5381769078938), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>Liane Fröhlich Grafik-Design</h3><p>Heinrich-Heine-Straße 20<br>04451 Borsdorf</p><h3>PATTERN EXPERT</h3><p>Heinrich-Heine-Straße 12<br>04451 Borsdorf<br><br>E-Mail: info@pattern-expert.de<br>WWW: <a href="http://www.pattern-expert.de">http://www.pattern-expert.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('10');
 $('div.leaflet-marker-pane img:last-child').addClass('10');
 var markerLocation = new L.LatLng(51.2103688567386, 12.3364481174386), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Decker Offset Druck GmbH</h3><p>Glaserstraße 2<br>04442 Zwenkau<br><br>E-Mail: info@decker-offset-druck.de<br>WWW: <a href="http://www.decker-offset-druck.de">http://www.decker-offset-druck.de</a></p>');
@@ -625,13 +625,13 @@ $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.4842610278428, 13.1251872291944), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>OFFSET-DRUCKEREI-BELGERN GmbH</h3><p>Ritterstraße 12<br>04874 Belgern<br><br>E-Mail: hallo@druckerei-belgern.de<br>WWW: <a href="http://www.druckerei-belgern.de">http://www.druckerei-belgern.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3559024, 12.2861872), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>Hannelore Reinecke</h3><p>Franz-Schlobach-Straße 25<br>04178 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3559024, 12.2861872), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>Hannelore Reinecke</h3><p>Franz-Schlobach-Straße 25<br>04178 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
 var markerLocation = new L.LatLng(51.2779467282708, 12.368704889501), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>CCC Software GmbH</h3><p>Ring 24<br>04416 Markkleeberg<br><br>E-Mail: contact@ccc-software.de<br>WWW: <a href="http://www.campus-computer-center.de">http://www.campus-computer-center.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
-var markerLocation = new L.LatLng(51.3143917528513, 12.3001775730753), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Diplomgrafiker Lutz-Erich Müller</h3><p>Bayreuther Straße 12<br>04207 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3143917528513, 12.3001775730753), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Diplomgrafiker Lutz-Erich Müller</h3><p>Bayreuther Straße 12<br>04207 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3356771115209, 12.3600054116944), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>MERKUR DRUCK- und KOPIERZENTRUM GmbH</h3><p>Hauptmannstraße 4<br>04109 Leipzig<br><br>E-Mail: info@merkurdruck.de<br>WWW: <a href="http://www.merkurdruck.de">http://www.merkurdruck.de</a></p>');
@@ -682,7 +682,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.2290240714145, 12.3313008553611), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Werbeagentur Schäfer</h3><p>Leipziger Straße 137<br>04442 Zwenkau<br><br>E-Mail: werbeas@zwenkau.de<br>WWW: <a href="http://www.zwenkau.de/werbeas">http://www.zwenkau.de/werbeas</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.3330249801068, 12.3558488984519), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Grafikdesigner Prof. Gert und Sonja Wunderlich</h3><p>Moschelesstraße 1<br>04109 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3330249801068, 12.3558488984519), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Grafikdesigner Prof. Gert und Sonja Wunderlich</h3><p>Moschelesstraße 1<br>04109 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3743591, 12.3947002), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Superscript GmbH</h3><p>Zschortauer Str. 39 - 41<br>04129 Leipzig<br><br>E-Mail: info@superscript.de<br>WWW: <a href="http://www.SUPERSCRIPT.de">http://www.SUPERSCRIPT.de</a></p>');
@@ -694,7 +694,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3275810655402, 12.3732450188669), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>ver.di - Fachbereich 8 Medien, Kunst, und Kultur, Druck und Papier, industrielle Dienste und Produktion</h3><p>Karl-Liebknecht-Straße 30 -32<br>04107 Leipzig<br><br>E-Mail: kerstin.bader@verdi.de<br>WWW: <a href="http://www.verdi.de">http://www.verdi.de</a></p><h3>ver.di - Fachgruppe 9 Telekommunikation, Informationstechnologie, Datenverarbeitung</h3><p>Karl-Liebknecht-Straße 30 -32<br>04107 Leipzig<br><br>E-Mail: enrico.zemke@verdi.de<br>WWW: <a href="http://nordsachsen.verdi.de">http://nordsachsen.verdi.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3889974610565, 12.4404744908003), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Kartographie und wissenschaftliche Grafik Jens Borleis</h3><p>Ursula-Götze-Straße 17<br>04349 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3889974610565, 12.4404744908003), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Kartographie und wissenschaftliche Grafik Jens Borleis</h3><p>Ursula-Götze-Straße 17<br>04349 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.365633571204, 12.4628144419347), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>MTG Kommunikations-Technik GmbH, Leipzig</h3><p>Portitzer Allee 8<br>04329 Leipzig<br><br>E-Mail: info@mtg-leipzig.de<br>WWW: <a href="http://www.mtg-leipzig.de">http://www.mtg-leipzig.de</a></p>');
@@ -709,13 +709,13 @@ $('div.leaflet-marker-pane img:last-child').addClass('10');
 var markerLocation = new L.LatLng(51.36513492524, 12.4607689272026), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Messedruck Leipzig GmbH</h3><p>Ostwaldstraße 4<br>04329 Leipzig<br><br>E-Mail: info@messedruck.de<br>WWW: <a href="http://www.messedruck.de">http://www.messedruck.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3409696, 12.4032395), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>KAILASH Esoterische Buchhandlung</h3><p>Burgstraße 12<br>04109 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3409696, 12.4032395), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>KAILASH Esoterische Buchhandlung</h3><p>Burgstraße 12<br>04109 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3269489502478, 12.325162876454), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>blattwerk-design GmbH</h3><p>Naumburger Straße 28<br>04229 Leipzig<br><br>E-Mail: info@blattwerk-design.de<br>WWW: <a href="http://www.blattwerk-design.de">http://www.blattwerk-design.de</a></p><h3>LBW Aus- und Fortbildungsgesellschaft für Wirtschaft und Verwaltung mbH</h3><p>Naumburger Straße 26 a<br>04229 Leipzig<br><br>E-Mail: info@lbw-leipzig.de<br>WWW: <a href="http://www.LBW-Leipzig.de">http://www.LBW-Leipzig.de</a></p><h3>jo zarth visual design</h3><p>Naumburger Straße 44<br>04229 Leipzig<br><br>E-Mail: post@zarthcore.de<br>WWW: <a href="http://www.zarthcore.de">http://www.zarthcore.de</a></p><h3>UAP Video GmbH</h3><p>Naumburgerstraße 28 Haus B, 2. Etage<br>04229 Leipzig<br><br>E-Mail: info@uap-video.de<br>WWW: <a href="http://www.uap-film.de">http://www.uap-film.de</a></p><h3>LBW Aus- und Fortbildungsgesellschaft für Wirtschaft und Verwaltung mbH</h3><p>Naumburger Straße 26 a<br>04229 Leipzig<br><br>E-Mail: info@lbw-leipzig.de<br>WWW: <a href="http://www.lbw-leipzig.de">http://www.lbw-leipzig.de</a></p><h3>Artkolchose, Kollektiv für Gestaltung</h3><p>Naumburger Straße 44<br>04229 Leipzig<br><br>E-Mail: kontakt@artkolchose.de<br>WWW: <a href="http://www.artkolchose.de">http://www.artkolchose.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('10');
 $('div.leaflet-marker-pane img:last-child').addClass('10');
-var markerLocation = new L.LatLng(51.316059, 12.37911435), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>ECCE HOMO Film GmbH</h3><p>Kantstraße 53<br>04275 Leipzig<br><br>E-Mail: <br>WWW: <a href="http://www.filmpartner.de">http://www.filmpartner.de</a></p>');
+var markerLocation = new L.LatLng(51.316059, 12.37911435), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>ECCE HOMO Film GmbH</h3><p>Kantstraße 53<br>04275 Leipzig<br>WWW: <a href="http://www.filmpartner.de">http://www.filmpartner.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('05');
 $('div.leaflet-marker-pane img:last-child').addClass('05');
 var markerLocation = new L.LatLng(51.3075773439462, 12.4589701241227), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Druckerei Scheinert</h3><p>Christian-Grunert-Straße 2<br>04288 Leipzig<br><br>E-Mail: druckerei.scheinert@web.de</p><h3>Trotec Leipzig - Weber Marking Systems</h3><p>Christian-Grunert-Straße 2<br>04288 Leipzig<br><br>E-Mail: info@trotec-leipzig.de<br>WWW: <a href="http://www.trotec-leipzig.de">http://www.trotec-leipzig.de</a></p>');
@@ -724,13 +724,13 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3457812131004, 12.3633967518396), marker = new L.Marker(markerLocation, {icon: icon_11}); map.addLayer(marker);marker.bindPopup('<h3>Deutscher Werkbund Sachsen e. V.</h3><p>Leibnizstraße 21<br>04105 Leipzig<br><br>E-Mail: Bernd.Sikora.Architektur@t-online.de</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('11');
 $('div.leaflet-marker-pane img:last-child').addClass('11');
-var markerLocation = new L.LatLng(51.3750494, 12.49667865), marker = new L.Marker(markerLocation, {icon: icon_04}); map.addLayer(marker);marker.bindPopup('<h3>MITTELDEUTSCHER RUNDFUNK</h3><p>Kantstraße 71 -73<br>04275 Leipzig<br><br>E-Mail: kommunikation@mdr.de<br>WWW: <a href="http://www.mdr.de">http://www.mdr.de</a></p><h3>Media Mobil GmbH</h3><p>Kantstraße 71 -73<br>04275 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3750494, 12.49667865), marker = new L.Marker(markerLocation, {icon: icon_04}); map.addLayer(marker);marker.bindPopup('<h3>MITTELDEUTSCHER RUNDFUNK</h3><p>Kantstraße 71 -73<br>04275 Leipzig<br><br>E-Mail: kommunikation@mdr.de<br>WWW: <a href="http://www.mdr.de">http://www.mdr.de</a></p><h3>Media Mobil GmbH</h3><p>Kantstraße 71 -73<br>04275 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('04');
 $('div.leaflet-marker-pane img:last-child').addClass('04');
 var markerLocation = new L.LatLng(51.4635792905471, 12.4516308416723), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>foto-design-k</h3><p>Bahnhofstraße 64<br>04509 Krostitz<br><br>E-Mail: Kunstmann-fdk@t-online.de</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.3785032713406, 12.7450275161514), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>H. G. WALLMANN Buchhandlung</h3><p>Georg-Schumann-Straße 52<br>04155 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3785032713406, 12.7450275161514), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>H. G. WALLMANN Buchhandlung</h3><p>Georg-Schumann-Straße 52<br>04155 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.2671392763853, 12.3599257139664), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>UPC GmbH</h3><p>Sonnenweg 16 a<br>04416 Markkleeberg<br><br>E-Mail: info@upc-eventpool.de<br>WWW: <a href="http://www.upc-eventpool.de">http://www.upc-eventpool.de</a></p>');
@@ -817,7 +817,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.2800267946282, 12.3975315201437), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>news.doc GmbH</h3><p>Lortzingstraße 12<br>04105 Leipzig<br><br>E-Mail: info@newsdoc.de<br>WWW: <a href="http://www.newsdoc.de">http://www.newsdoc.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('05');
 $('div.leaflet-marker-pane img:last-child').addClass('05');
-var markerLocation = new L.LatLng(51.3718913, 12.3193119), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Leipziger Werbe-Service</h3><p>Rittergutsstraße 1<br>04159 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3718913, 12.3193119), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Leipziger Werbe-Service</h3><p>Rittergutsstraße 1<br>04159 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.2853387113357, 12.4075880433153), marker = new L.Marker(markerLocation, {icon: icon_11}); map.addLayer(marker);marker.bindPopup('<h3>3 D-Plan</h3><p>Johannishöhe 13<br>04279 Leipzig<br><br>E-Mail: mail@3d-plan.com<br>WWW: <a href="http://www.3d-plan.com">http://www.3d-plan.com</a></p>');
@@ -922,7 +922,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('05');
 var markerLocation = new L.LatLng(51.3765325, 12.7392677), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>Deutsche Telekom AG, Geschäftskunden Niederlassung</h3><p>Richard-Wagner-Straße 2<br>04109 Leipzig<br><br>E-Mail: Service-Intern-KNL-Leipzig@telekom.de<br>WWW: <a href="http://www.telekom.de">http://www.telekom.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
-var markerLocation = new L.LatLng(51.3586775135986, 12.4292692353041), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>HochBild Leipzig</h3><p>Bautzner Straße 67<br>04347 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3586775135986, 12.4292692353041), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>HochBild Leipzig</h3><p>Bautzner Straße 67<br>04347 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('05');
 $('div.leaflet-marker-pane img:last-child').addClass('05');
 var markerLocation = new L.LatLng(51.3410294, 12.3217548), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>hsmedia</h3><p>Diakonissenstraße 5<br>04177 Leipzig<br><br>E-Mail: kontakt@hans-seifert.de<br>WWW: <a href="http://www.hans-seifert.de/hsmedia_2">http://www.hans-seifert.de/hsmedia_2</a></p>');
@@ -982,13 +982,13 @@ $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3397673706703, 12.2559265476641), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Vermittlung von Kleindarstellern</h3><p>Reichenberger Straße 1<br>04178 Leipzig<br><br>E-Mail: pumperla@oper-leipzig.de</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3191784, 12.3832991), marker = new L.Marker(markerLocation, {icon: icon_04}); map.addLayer(marker);marker.bindPopup('<h3>FORMAT-Film- und Fernsehproduktion GmbH Büro Sachsen</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: <br>WWW: <a href="http://www.media-city-leipzig.de">http://www.media-city-leipzig.de</a></p><h3>Medienhaus Leipzig Film und Fernsehproduktion GmbH</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: medienhaus.leipzig@t-online.de</p><h3>PROVOBIS, Gesellschaft für Film und Fernsehen mbH</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@provobis.de<br>WWW: <a href="http://www.provobis.de">http://www.provobis.de</a></p><h3>salier / media</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@salier-media.de<br>WWW: <a href="http://www.salier-media.de">http://www.salier-media.de</a></p><h3>Salier Verlag</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@salierverlag.de<br>WWW: <a href="http://www.salierverlag.de">http://www.salierverlag.de</a></p><h3>DREFA Media Service GmbH</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@drefa-msg.de<br>WWW: <a href="http.//www.drefa-msg.de">http.//www.drefa-msg.de</a></p><h3>PETN.TV GmbH</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: alexander.koelling@petn.tv<br>WWW: <a href="http://www.petn.tv">http://www.petn.tv</a></p><h3>schellemedia</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@schellemedia.de<br>WWW: <a href="http://www.schellemedia.de">http://www.schellemedia.de</a></p>');
+var markerLocation = new L.LatLng(51.3191784, 12.3832991), marker = new L.Marker(markerLocation, {icon: icon_04}); map.addLayer(marker);marker.bindPopup('<h3>FORMAT-Film- und Fernsehproduktion GmbH Büro Sachsen</h3><p>Altenburger Straße 5<br>04275 Leipzig<br>WWW: <a href="http://www.media-city-leipzig.de">http://www.media-city-leipzig.de</a></p><h3>Medienhaus Leipzig Film und Fernsehproduktion GmbH</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: medienhaus.leipzig@t-online.de</p><h3>PROVOBIS, Gesellschaft für Film und Fernsehen mbH</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@provobis.de<br>WWW: <a href="http://www.provobis.de">http://www.provobis.de</a></p><h3>salier / media</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@salier-media.de<br>WWW: <a href="http://www.salier-media.de">http://www.salier-media.de</a></p><h3>Salier Verlag</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@salierverlag.de<br>WWW: <a href="http://www.salierverlag.de">http://www.salierverlag.de</a></p><h3>DREFA Media Service GmbH</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@drefa-msg.de<br>WWW: <a href="http.//www.drefa-msg.de">http.//www.drefa-msg.de</a></p><h3>PETN.TV GmbH</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: alexander.koelling@petn.tv<br>WWW: <a href="http://www.petn.tv">http://www.petn.tv</a></p><h3>schellemedia</h3><p>Altenburger Straße 5<br>04275 Leipzig<br><br>E-Mail: info@schellemedia.de<br>WWW: <a href="http://www.schellemedia.de">http://www.schellemedia.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('04');
 $('div.leaflet-marker-pane img:last-child').addClass('04');
 var markerLocation = new L.LatLng(51.3493239235291, 12.3011601252855), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>GfB mbh Catering</h3><p>Ludwig-Hupfeld-Straße 22 a<br>04179 Leipzig<br><br>E-Mail: schellenberg@gfb-catering.com<br>WWW: <a href="http://www.gfb-catering.com/">http://www.gfb-catering.com/</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3438708536247, 12.3578048233359), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>PRO LEIPZIG e.V.</h3><p>Waldstraße 19<br>04105 Leipzig<br><br>E-Mail: proleipzig@t-online.de<br>WWW: <a href="http://www.proleipzig.eu">http://www.proleipzig.eu</a></p>');
+var markerLocation = new L.LatLng(51.0636486431688, 12.5581882999467), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>PRO LEIPZIG e.V.</h3><p>Waldstraße 19<br>04105 Leipzig<br><br>E-Mail: proleipzig@t-online.de<br>WWW: <a href="http://www.proleipzig.eu">http://www.proleipzig.eu</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('03');
 $('div.leaflet-marker-pane img:last-child').addClass('03');
 var markerLocation = new L.LatLng(51.3253731, 12.3718731), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>Aspen Miles Productions</h3><p>Körnerstraße 3<br>04107 Leipzig<br><br>E-Mail: stock@aspen-miles.de<br>WWW: <a href="http://www.aspen-miles.de">http://www.aspen-miles.de</a></p>');
@@ -1015,7 +1015,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('05');
 var markerLocation = new L.LatLng(51.23524345, 12.729702), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>P.D. - Veranstaltungsmanagement</h3><p>Kreuzstraße 19<br>04103 Leipzig<br><br>E-Mail: Peter.Degner@pdnet.de<br>WWW: <a href="http://www.pdnet.de">http://www.pdnet.de</a></p><h3>Leipzig report - Das Pressebüro</h3><p>Kreuzstraße 10<br>04103 Leipzig<br><br>E-Mail: th.biskupek@t-online.de<br>WWW: <a href="http://www.leipzigreport.de">http://www.leipzigreport.de</a></p><h3>Netzhautmassage</h3><p>Kreuzstraße 1<br>04103 Leipzig<br><br>E-Mail: post@netzhautmassage.de<br>WWW: <a href="http://www.netzhautmassage.de">http://www.netzhautmassage.de</a></p><h3>Agentur - Schade</h3><p>Kreuzstraße 1<br>04103 Leipzig<br><br>E-Mail: info@agentur-schade.de<br>WWW: <a href="http://www.agentur-schade.de">http://www.agentur-schade.de</a></p><h3>Projecter GmbH</h3><p>Kreuzstraße 1a<br>04103 Leipzig<br><br>E-Mail: info@projecter.de<br>WWW: <a href="http://www.projecter.de">http://www.projecter.de</a></p><h3>Agentur Tiracon  - Marco Teubner und Tobias Pellny GbR</h3><p>Kreuzstraße 1<br>04103 Leipzig<br><br>E-Mail: info@tiracon.com<br>WWW: <a href="http://www.tiracon.com/">http://www.tiracon.com/</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3264936090437, 12.3137470741638), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Sven Werner</h3><p>Am Kanal 30<br>04179 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3264936090437, 12.3137470741638), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Sven Werner</h3><p>Am Kanal 30<br>04179 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3321582, 12.34911335), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>SWZS Software Zentrum Sachsen GmbH</h3><p>Karl-Heine-Straße 99<br>04229 Leipzig<br><br>E-Mail: info@swzs.de<br>WWW: <a href="http://www.swzs.de">http://www.swzs.de</a></p><h3>Schaubühne Lindenfels</h3><p>Karl-Heine-Straße 50<br>04229 Leipzig<br><br>E-Mail: service@schaubuehne.com<br>WWW: <a href="http://www.schaubuehne.com">http://www.schaubuehne.com</a></p><h3>s p Software und Consulting AG</h3><p>Karl-Heine-Straße 109- 111<br>04229 Leipzig<br><br>E-Mail: info@spag-personal.de<br>WWW: <a href="http://www.spag-personal.de">http://www.spag-personal.de</a></p>');
@@ -1027,7 +1027,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3229888397282, 12.2912493541287), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Aggreko Deutschland GmbH, Depot Leipzig</h3><p>Schönauer Straße 113<br>04207 Leipzig<br><br>E-Mail: vertrieb@aggreko.de<br>WWW: <a href="http://www.aggreko.de">http://www.aggreko.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3715021198932, 12.3604625631826), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Caprice Catering</h3><p>Hans-Oster-Straße 48<br>04157 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3715021198932, 12.3604625631826), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Caprice Catering</h3><p>Hans-Oster-Straße 48<br>04157 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3776679226212, 12.3174562643561), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>VEMOWa Straßenbau GmbH</h3><p>Am Börnchen 4<br>04159 Leipzig<br><br>E-Mail: info@vemowa.de<br>WWW: <a href="http://www.vemowa.de">http://www.vemowa.de</a></p>');
@@ -1042,7 +1042,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('04');
 var markerLocation = new L.LatLng(51.3580299, 12.71027515), marker = new L.Marker(markerLocation, {icon: icon_10}); map.addLayer(marker);marker.bindPopup('<h3>Ziska Design</h3><p>Lindenstraße 13<br>04828 Bennewitz<br><br>E-Mail: jz@ziskadesign.de<br>WWW: <a href="http://www.ziskadesign.de">http://www.ziskadesign.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('10');
 $('div.leaflet-marker-pane img:last-child').addClass('10');
-var markerLocation = new L.LatLng(51.3422135652555, 12.3729516129063), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>Passage Kino Betriebs GmbH</h3><p>Hainstraße 19 a<br>04109 Leipzig<br><br>E-Mail: info@passage-kinos.de<br>WWW: <a href="http://www.passage-kinos.de">http://www.passage-kinos.de</a></p><h3>IMRAG - INTERNATIONAL MEDIA RESEARCH AGENCY GMBH</h3><p>Hainstraße 19<br>04109 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3422135652555, 12.3729516129063), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>Passage Kino Betriebs GmbH</h3><p>Hainstraße 19 a<br>04109 Leipzig<br><br>E-Mail: info@passage-kinos.de<br>WWW: <a href="http://www.passage-kinos.de">http://www.passage-kinos.de</a></p><h3>IMRAG - INTERNATIONAL MEDIA RESEARCH AGENCY GMBH</h3><p>Hainstraße 19<br>04109 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('05');
 $('div.leaflet-marker-pane img:last-child').addClass('05');
 var markerLocation = new L.LatLng(51.3416566809425, 12.3741989900752), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Marfos Marktforschung GmbH</h3><p>Hainstraße 4<br>04109 Leipzig<br><br>E-Mail: leipzig.office@ma-res.de<br>WWW: <a href="http://www.mafos.de">http://www.mafos.de</a></p>');
@@ -1066,7 +1066,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3620604657249, 12.3593310670369), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>LE.Formatio UG</h3><p>Eisenacher Straße 68<br>04155 Leipzig<br><br>E-Mail: swen.fritzsche@le-formatio.de<br>WWW: <a href="http://www.le-formatio.de">http://www.le-formatio.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.3110212566008, 12.4173872398542), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Ingenieurbüro Dr.-Ing. Lothar Krägelin</h3><p>Kommandant-Prendel-Allee 102<br>04299 Leipzig<br><br>E-Mail: </p><h3>Edition Hamouda</h3><p>Kommandant-Prendel-Allee 90 a<br>04299 Leipzig<br><br>E-Mail: info@hamouda.de<br>WWW: <a href="http://www.hamouda.de">http://www.hamouda.de</a></p>');
+var markerLocation = new L.LatLng(51.3110212566008, 12.4173872398542), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Ingenieurbüro Dr.-Ing. Lothar Krägelin</h3><p>Kommandant-Prendel-Allee 102<br>04299 Leipzig</p><h3>Edition Hamouda</h3><p>Kommandant-Prendel-Allee 90 a<br>04299 Leipzig<br><br>E-Mail: info@hamouda.de<br>WWW: <a href="http://www.hamouda.de">http://www.hamouda.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3874837, 12.38941845), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>ajour toujours Die Leihkultur GmbH</h3><p>Zschortauer Straße 69<br>04129 Leipzig<br><br>E-Mail: leipzig@die-leihkultur.de<br>WWW: <a href="http://www.die-leihkultur.de">http://www.die-leihkultur.de</a></p><h3>MaXxPrint GmbH</h3><p>Zschortauer Straße 60<br>04129 Leipzig<br><br>E-Mail: info@maxxprint.de<br>WWW: <a href="http://www.maxxprint.de">http://www.maxxprint.de</a></p>');
@@ -1129,7 +1129,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3255444, 12.3376282), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>forcont business technology gmbh</h3><p>Nonnenstraße 39<br>04229 Leipzig<br><br>E-Mail: office@forcont.de<br>WWW: <a href="http://www.forcont.de">http://www.forcont.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
-var markerLocation = new L.LatLng(51.3561526484345, 12.2600843757525), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>Micaela Seiferth-Wilde - Freie Journalistin</h3><p>An der Rehwiese 10a<br>04178 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3561526484345, 12.2600843757525), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>Micaela Seiferth-Wilde - Freie Journalistin</h3><p>An der Rehwiese 10a<br>04178 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('03');
 $('div.leaflet-marker-pane img:last-child').addClass('03');
 var markerLocation = new L.LatLng(51.3468763390322, 12.3600193559262), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>eConsultIT.com</h3><p>Liviastraße 6<br>04105 Leipzig<br><br>E-Mail: contact@econsultit.com<br>WWW: <a href="http://www.econsultit.com">http://www.econsultit.com</a></p>');
@@ -1141,7 +1141,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('05');
 var markerLocation = new L.LatLng(51.3354136041962, 12.3704019655747), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Freie Akademie der Künste zu Leipzig e.V.</h3><p>Karl-Tauchnitz-Straße 2<br>04107 Leipzig<br><br>E-Mail: Info@AkademieLeipzig.de<br>WWW: <a href="http://www.akademieleipzig.de/">http://www.akademieleipzig.de/</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3121931056326, 12.262075196405), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>WEWO Werbung   Dienstleistungen</h3><p>Binzer Straße 5<br>04207 Leipzig<br><br>E-Mail: </p><h3>WEWO Werbung Wollmann</h3><p>Binzer Straße 5<br>04207 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3121931056326, 12.262075196405), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>WEWO Werbung   Dienstleistungen</h3><p>Binzer Straße 5<br>04207 Leipzig</p><h3>WEWO Werbung Wollmann</h3><p>Binzer Straße 5<br>04207 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3469486863474, 12.3704949059997), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Universität Leipzig, Zentrum für Medien und Kommunikation</h3><p>Emil-Fuchs-Straße 1<br>04105 Leipzig<br><br>E-Mail: zmk@uni-leipzig.de<br>WWW: <a href="http://www.uni-leipzig.de/~zmk">http://www.uni-leipzig.de/~zmk</a></p>');
@@ -1171,7 +1171,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('04');
 var markerLocation = new L.LatLng(51.3178010501607, 12.3725867868296), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Verein Freundeskreis der Qualität in der Medienkultur e.V.</h3><p>Steinstraße 37<br>04275 Leipzig<br><br>E-Mail: vorstand@freundeskreismedienkultur.de<br>WWW: <a href="http://www.freundeskreismedienkultur.de">http://www.freundeskreismedienkultur.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3652012, 12.3992234), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>TomTom WORK</h3><p>Maximilianallee 4<br>04129 Leipzig<br><br>E-Mail: <br>WWW: <a href="http://www.tomtomwork.com">http://www.tomtomwork.com</a></p><h3>GDMcom Gesellschaft für Dokumentation und Telekommunikation mbH</h3><p>Maximilianallee 4<br>04129 Leipzig<br><br>E-Mail: info@gdmcom.de<br>WWW: <a href="http://www.gdmcom.de">http://www.gdmcom.de</a></p><h3>ACS Soutions GmbH</h3><p>Maximilianallee 4<br>04129 Leipzig<br><br>E-Mail: info@acs-europe.de<br>WWW: <a href="http://www.acs-europe.de">http://www.acs-europe.de</a></p>');
+var markerLocation = new L.LatLng(51.3652012, 12.3992234), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>TomTom WORK</h3><p>Maximilianallee 4<br>04129 Leipzig<br>WWW: <a href="http://www.tomtomwork.com">http://www.tomtomwork.com</a></p><h3>GDMcom Gesellschaft für Dokumentation und Telekommunikation mbH</h3><p>Maximilianallee 4<br>04129 Leipzig<br><br>E-Mail: info@gdmcom.de<br>WWW: <a href="http://www.gdmcom.de">http://www.gdmcom.de</a></p><h3>ACS Soutions GmbH</h3><p>Maximilianallee 4<br>04129 Leipzig<br><br>E-Mail: info@acs-europe.de<br>WWW: <a href="http://www.acs-europe.de">http://www.acs-europe.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
 var markerLocation = new L.LatLng(51.3178884, 12.4235746), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>LipsCity - Forum</h3><p>Pösnaer Straße 9<br>04299 Leipzig<br><br>E-Mail: w.g.walk@freenet.de<br>WWW: <a href="http://walkhoefer.jimdo.com/">http://walkhoefer.jimdo.com/</a></p>');
@@ -1219,7 +1219,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.2756161028944, 12.3115624396758), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>architektur   medien</h3><p>Seumestraße 34 B<br>04249 Leipzig<br><br>E-Mail: info@licht-medien.de<br>WWW: <a href="http://www.digitalehaut.de">http://www.digitalehaut.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.2407962927202, 12.7314713611903), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Designbüro form   technik</h3><p>Oberwerder 3<br>04668 Grimma<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.2407962927202, 12.7314713611903), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Designbüro form   technik</h3><p>Oberwerder 3<br>04668 Grimma</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3561069957611, 12.3631047180402), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>Thomas Lenck - Freier Journalist</h3><p>Poetenweg 29<br>04155 Leipzig<br><br>E-Mail: talk2me@thomaslenck.de<br>WWW: <a href="http://www.thomaslenck.de">http://www.thomaslenck.de</a></p>');
@@ -1279,7 +1279,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3475987, 12.356376), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Danko Dolch Visual Service</h3><p>Waldstraße 70<br>04105 Leipzig<br><br>E-Mail: info@dolchonline.net<br>WWW: <a href="http://www.dolchonline.net">http://www.dolchonline.net</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
-var markerLocation = new L.LatLng(51.3430183766682, 12.3781431601862), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Salon Strese</h3><p>Nikolaistraße 55<br>04109 Leipzig<br><br>E-Mail: <br>WWW: <a href="http://www.salon-strese.de">http://www.salon-strese.de</a></p>');
+var markerLocation = new L.LatLng(51.3430183766682, 12.3781431601862), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Salon Strese</h3><p>Nikolaistraße 55<br>04109 Leipzig<br>WWW: <a href="http://www.salon-strese.de">http://www.salon-strese.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('00');
 $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3443273481486, 12.3954932555074), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>HUP AG</h3><p>Atriumstraße 1<br>04315 Leipzig<br><br>E-Mail: info@hup.de<br>WWW: <a href="http://www.hup.de">http://www.hup.de</a></p><h3>DMR Rusexpress GmbH</h3><p>Atriumstraße 4<br>04315 Leipzig<br><br>E-Mail: podpiska@pressa.de<br>WWW: <a href="http://www.pressa.de">http://www.pressa.de</a></p>');
@@ -1324,7 +1324,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('01');
 var markerLocation = new L.LatLng(51.3617390554628, 13.0603118185566), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Pressebetreuung Steinmann</h3><p>Winterseite 21 b<br>04758 Lampertswalde<br><br>E-Mail: info@pressebetreuung.de<br>WWW: <a href="http://www.pressebetreuung.de">http://www.pressebetreuung.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.33809885, 12.3904027), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>Konica Minolta Business Solutions Deutschland GmbH</h3><p>Rabensteinplatz 1<br>04103 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.33809885, 12.3904027), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>Konica Minolta Business Solutions Deutschland GmbH</h3><p>Rabensteinplatz 1<br>04103 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
 var markerLocation = new L.LatLng(51.3455980228803, 12.373678004754), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>namo_medizin_medien</h3><p>Löhrstrasse 12<br>04105 Leipzig<br><br>E-Mail: drnamo@t-online.de<br>WWW: <a href="http://www.drnamo.de">http://www.drnamo.de</a></p>');
@@ -1495,7 +1495,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.34027635, 12.52595805), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Medienagentur Petra Schellenberg</h3><p>Am Wiesenblick 50<br>04319 Leipzig<br><br>E-Mail: petra.schellenberg@web.de</p><h3>Verwaltungsverlag</h3><p>Am Wiesenblick 50<br>04319 Leipzig<br><br>E-Mail: p.schellenberg@verwaltungsverlag.de<br>WWW: <a href="http://www.stadtplan.net">http://www.stadtplan.net</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.3370324565835, 12.3638936964488), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>staffadvance GmbH</h3><p>Gustav-Mahler-Straße 8<br>04105 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3370324565835, 12.3638936964488), marker = new L.Marker(markerLocation, {icon: icon_01}); map.addLayer(marker);marker.bindPopup('<h3>staffadvance GmbH</h3><p>Gustav-Mahler-Straße 8<br>04105 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('01');
 $('div.leaflet-marker-pane img:last-child').addClass('01');
 var markerLocation = new L.LatLng(51.3631631394788, 12.3540514489564), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Public Relations Büro Katja Haß</h3><p>Bothestraße 10<br>04155 Leipzig<br><br>E-Mail: buero@pr-katjahass.de<br>WWW: <a href="http://www.pr-katjahass.de">http://www.pr-katjahass.de</a></p>');
@@ -1558,7 +1558,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.5468629639236, 13.0035550327551), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>JOM Grafikdesign</h3><p>Fischeraue 26<br>04860 Torgau<br><br>E-Mail: philartphace@web.de</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.3353833441585, 12.3403257641977), marker = new L.Marker(markerLocation, {icon: icon_04}); map.addLayer(marker);marker.bindPopup('<h3>medienblau Büro Leipzig</h3><p>Lütznerstraße 85<br>04177 Leipzig<br><br>E-Mail: mail@medienblau.de<br>WWW: <a href="http://www.medienblau.de">http://www.medienblau.de</a></p><h3>DATA-team GmbH</h3><p>Lützner Straße 77 -79<br>04177 Leipzig<br><br>E-Mail: <br>WWW: <a href="http://www.data-team.de">http://www.data-team.de</a></p>');
+var markerLocation = new L.LatLng(51.3353833441585, 12.3403257641977), marker = new L.Marker(markerLocation, {icon: icon_04}); map.addLayer(marker);marker.bindPopup('<h3>medienblau Büro Leipzig</h3><p>Lütznerstraße 85<br>04177 Leipzig<br><br>E-Mail: mail@medienblau.de<br>WWW: <a href="http://www.medienblau.de">http://www.medienblau.de</a></p><h3>DATA-team GmbH</h3><p>Lützner Straße 77 -79<br>04177 Leipzig<br>WWW: <a href="http://www.data-team.de">http://www.data-team.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('04');
 $('div.leaflet-marker-pane img:last-child').addClass('04');
 var markerLocation = new L.LatLng(51.3909315904574, 12.3768322290687), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>Schönlein Verkehrstechnik GmbH, NL Leipzig</h3><p>Delitzscher Straße 2-14<br>04105 Leipzig<br><br>E-Mail: leipzig@schoenlein.com<br>WWW: <a href="http://www.schoenlein.com">http://www.schoenlein.com</a></p>');
@@ -1606,7 +1606,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3314374710963, 12.3379857034321), marker = new L.Marker(markerLocation, {icon: icon_06}); map.addLayer(marker);marker.bindPopup('<h3>UNIKATUM Ausstellungsmedien GmbH</h3><p>Zschochersche Straße 26<br>04229 Leipzig<br><br>E-Mail: ahaensel@unikatum.net<br>WWW: <a href="http://www.unikatum.net">http://www.unikatum.net</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('06');
 $('div.leaflet-marker-pane img:last-child').addClass('06');
-var markerLocation = new L.LatLng(51.3059553022518, 12.3786851547154), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Bild Wirkung Ulrike Jentzsch</h3><p>Meusdorfer Straße 47 a<br>04277 Leipzig<br><br>E-Mail: </p>');
+var markerLocation = new L.LatLng(51.3059553022518, 12.3786851547154), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Bild Wirkung Ulrike Jentzsch</h3><p>Meusdorfer Straße 47 a<br>04277 Leipzig</p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3042525, 12.3967787), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>STUDENTENLEKTORAT</h3><p>Zwickauer Straße 111<br>04277 Leipzig<br><br>E-Mail: studentenlektorat@web.de<br>WWW: <a href="http://www.studentenlektorat.de">http://www.studentenlektorat.de</a></p>');
@@ -1696,7 +1696,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('00');
 var markerLocation = new L.LatLng(51.3344717395293, 12.4041142245342), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>Metronom Agentur für Kommunikation und Design GmbH</h3><p>Sigismundstraße 6<br>04317 Leipzig<br><br>E-Mail: info@metronom-leipzig.de<br>WWW: <a href="http://www.metronom-leipzig.de">http://www.metronom-leipzig.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
-var markerLocation = new L.LatLng(51.4918427, 11.9747537), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>Infinnitor Films</h3><p>Schillerstraße 2<br>06114 Halle<br><br>E-Mail: <br>WWW: <a href="http://www.infinnitorfilms.com">http://www.infinnitorfilms.com</a></p>');
+var markerLocation = new L.LatLng(51.4918427, 11.9747537), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>Infinnitor Films</h3><p>Schillerstraße 2<br>06114 Halle<br>WWW: <a href="http://www.infinnitorfilms.com">http://www.infinnitorfilms.com</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('05');
 $('div.leaflet-marker-pane img:last-child').addClass('05');
 var markerLocation = new L.LatLng(51.3023299749686, 12.390765278964), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Eudora-Verlag Leipzig</h3><p>Hildeweg 7<br>04279 Leipzig<br><br>E-Mail: info@eudora-verlag.de<br>WWW: <a href="http://www.eudora-verlag.de">http://www.eudora-verlag.de</a></p>');
@@ -1873,7 +1873,7 @@ $('div.leaflet-marker-pane img:last-child').addClass('02');
 var markerLocation = new L.LatLng(51.3451264864857, 12.3548809261822), marker = new L.Marker(markerLocation, {icon: icon_02}); map.addLayer(marker);marker.bindPopup('<h3>Pablos Edition Leipzig</h3><p>Max-Planck-Str. 2<br>04105 Leipzig<br><br>E-Mail: PablosEdition@kabelmail.de<br>WWW: <a href="http://www.PablosEdition.com">http://www.PablosEdition.com</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('02');
 $('div.leaflet-marker-pane img:last-child').addClass('02');
-var markerLocation = new L.LatLng(51.3158375337683, 12.3672457691612), marker = new L.Marker(markerLocation, {icon: icon_08}); map.addLayer(marker);marker.bindPopup('<h3>mvmc ltd. – Musikverlag Martin Krämer</h3><p>Kantstraße 4<br>04275 Leipzig<br><br>E-Mail: <br>WWW: <a href="http://www.mvmc.net">http://www.mvmc.net</a></p>');
+var markerLocation = new L.LatLng(51.3158375337683, 12.3672457691612), marker = new L.Marker(markerLocation, {icon: icon_08}); map.addLayer(marker);marker.bindPopup('<h3>mvmc ltd. – Musikverlag Martin Krämer</h3><p>Kantstraße 4<br>04275 Leipzig<br>WWW: <a href="http://www.mvmc.net">http://www.mvmc.net</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('08');
 $('div.leaflet-marker-pane img:last-child').addClass('08');
 var markerLocation = new L.LatLng(51.2283054187627, 11.6701043774003), marker = new L.Marker(markerLocation, {icon: icon_00}); map.addLayer(marker);marker.bindPopup('<h3>E SERVICE CHECK GmbH</h3><p>Nebraer Straße 19 a<br>06636 Laucha an der Unstrut<br><br>E-Mail: info@e-service-check.de<br>WWW: <a href="http://www.e-service-check.de">http://www.e-service-check.de</a></p>');
@@ -1888,15 +1888,18 @@ $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.5625919, 13.0013817), marker = new L.Marker(markerLocation, {icon: icon_03}); map.addLayer(marker);marker.bindPopup('<h3>Leipziger Amtsblatt - Mitteilungsblatt der Stadtverwaltung</h3><p>Martin-Luther-Ring 4-6<br>04109 Leipzig<br><br>E-Mail: amtsblatt@leipzig.de<br>WWW: <a href="htp://www.leipzig.de/amtsblatt">htp://www.leipzig.de/amtsblatt</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('03');
 $('div.leaflet-marker-pane img:last-child').addClass('03');
-var markerLocation = new L.LatLng(51.3338751825923, 12.354808727088), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>chaos communication</h3><p>Moschelesstraße 7<br>04109 Leipzig<br><br>E-Mail: <br>WWW: <a href="http://www.chaos-comm.de">http://www.chaos-comm.de</a></p>');
+var markerLocation = new L.LatLng(51.3338751825923, 12.354808727088), marker = new L.Marker(markerLocation, {icon: icon_09}); map.addLayer(marker);marker.bindPopup('<h3>chaos communication</h3><p>Moschelesstraße 7<br>04109 Leipzig<br>WWW: <a href="http://www.chaos-comm.de">http://www.chaos-comm.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('09');
 $('div.leaflet-marker-pane img:last-child').addClass('09');
 var markerLocation = new L.LatLng(51.3351758867498, 12.3309120025567), marker = new L.Marker(markerLocation, {icon: icon_05}); map.addLayer(marker);marker.bindPopup('<h3>DEPARTURES Film GmbH</h3><p>Endersstraße 64<br>04177 Leipzig<br><br>E-Mail: info@departuresfilm.de<br>WWW: <a href="http://www.departuresfilm.de">http://www.departuresfilm.de</a></p>');
 $('div.leaflet-shadow-pane img:last-child').addClass('05');
 $('div.leaflet-marker-pane img:last-child').addClass('05');
+var sub_market_counts = {"all":873,"02":159,"01":138,"00":159,"10":22,"09":189,"07":5,"03":47,"08":20,"05":78,"06":21,"11":5,"04":30};
 // ############### END OF DATA ################
 
-$(".leaflet-top.leaflet-left").prepend('<div id="nav" class="leaflet-control-zoom leaflet-control"></div>')
+$(".leaflet-top.leaflet-left").prepend('<div id="nav" class="leaflet-control-zoom leaflet-control"></div>');
+
+$(".leaflet-top.leaflet-left").prepend('<div id="head" style="color:white;font-weight:bold;font-size:100%;" class="leaflet-control-zoom leaflet-control"><br>Medienunternehmen<br>der Stadt Leipzig</div>');
 
 $(".leaflet-control-zoom.leaflet-control").css("background-color","rgba(0,0,0,0.75)");
 
@@ -1917,7 +1920,7 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
 
       for (var i = 1; i <= 12; i++) {
 
-        $('#nav').append('<div id="'+pad(i%12,2)+'" style="font-size:90%;color:white;"><img style="height:15px;" src="images/'+pad(i%12,2)+'.png"><span style="padding:3px;">'+names[i%12]+'</span></div>');
+        $('#nav').append('<div id="'+pad(i%12,2)+'" style="font-size:90%;color:white;"><img style="height:15px;" src="images/'+pad(i%12,2)+'.png"><span style="padding:3px;">'+names[i%12]+'</span> <span style="font-size:70%;color:#BBB;">('+sub_market_counts[pad(i%12,2)]+')</span></div>');
 
         $('#'+pad(i%12,2)).hover(function() {
           $(this).css('cursor','pointer');
@@ -1945,7 +1948,7 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
         })
       }
 
-      $('#nav').append('<p id="toggle_all" style="margin-left:12px;margin-top:10px;color:white;font-size:90%;">Alles ausblenden</p>');
+      $('#nav').append('<p id="toggle_all" style="margin-left:12px;margin-top:10px;color:white;font-size:90%;">Alles ausblenden <span style="font-size:70%;color:#BBB;">('+sub_market_counts['all']+')</span></p>');
 
       $('#toggle_all').hover(function() {
         $(this).css('cursor','pointer');
@@ -1953,7 +1956,8 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
 
       $('#toggle_all').toggle(function(ev){
         ev.preventDefault();
-        $(this).text("Alle einblenden");
+        $(this).text('Alles einblenden ');
+        $(this).append('<span style="font-size:70%;color:#BBB;">('+sub_market_counts['all']+')</span>');
         for (var i = 0; i <= 11; i++) {
           $('div#nav div#'+pad(i,2)).css('color', '#888');
           $('div#nav div#'+pad(i,2)).children('img').css('opacity', '0.6');
@@ -1963,7 +1967,8 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
         }
       },function(ev){
         ev.preventDefault();
-        $(this).text("Alle ausblenden");
+        $(this).text('Alle ausblenden ');
+        $(this).append('<span style="font-size:70%;color:#BBB;">('+sub_market_counts['all']+')</span>');
         for (var i = 0; i <= 11; i++) {
           $('div#nav div#'+pad(i,2)).css('color', 'white');
           $('div#nav div#'+pad(i,2)).children('img').css('opacity', '');
@@ -1972,8 +1977,10 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
           $('div.leaflet-marker-pane div.'+pad(i,2)).show();
         }
       });
+      $(".leaflet-top.leaflet-left").css("top", - $("#head").height()/2);
+      $("#head").css("width", $("#nav").width());
 
-      $('#nav').append('<p style="margin-left:12px;margin-top:10px;font-size:70%;color:#CCC">Bitte auf einzelne Teilmärkte<br>klicken, um sie auf der Karte<br>ein- und auszublenden.</p>');
+      $('#nav').append('<p style="margin-left:12px;margin-top:10px;font-size:70%;color:#BBB;">Bitte auf einzelne Teilmärkte<br>klicken, um sie auf der Karte<br>ein- und auszublenden.</p>');
     });
     </script>
 

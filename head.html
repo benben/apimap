@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Unternehmenskarte der Stadt Leipzig erzeugt aus API.Leipzig Daten</title>
-	<meta charset="utf-8" />
+  <title>Unternehmenskarte der Stadt Leipzig erzeugt aus API.Leipzig Daten</title>
+  <meta charset="utf-8" />
 
-	<link rel="stylesheet" href="leaflet/dist/leaflet.css" />
-	<!--[if lte IE 8]><link rel="stylesheet" href="leaflet/dist/leaflet.ie.css" /><![endif]-->
-	<style type="text/css">
-	  * {
-		  margin: 0px;
-		  padding: 0px;
-	  }
+  <link rel="stylesheet" href="leaflet/dist/leaflet.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="leaflet/dist/leaflet.ie.css" /><![endif]-->
+  <style type="text/css">
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
 
-	  #info {
-		  position: absolute;
-		  bottom: 0px;
-	  }
-	</style>
+    #info {
+      position: absolute;
+      bottom: 0px;
+    }
+  </style>
 </head>
 <body>
-	<div id="map"></div>
-	<script src="leaflet/dist/leaflet.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <div id="map"></div>
+  <script src="leaflet/dist/leaflet.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
   <script type="text/javascript">
     $(function (){
       $("#map").width($(window).width());
-	    $("#map").height($(window).height());// - 150);
+      $("#map").height($(window).height());// - 150);
 
       $(window).resize(function() {
         $("#map").width($(window).width());
-		    $("#map").height($(window).height());// - 150);
+        $("#map").height($(window).height());// - 150);
       });
 
       var LeafIcon = L.Icon.extend({
@@ -52,9 +52,9 @@
 
       var map = new L.Map('map');
 
-		  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-		  osmAttribution = '<a target="_blank" href="http://www.openstreetmap.org/">Karte hergestellt aus OpenStreetMap-Daten</a> | Lizenz: <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons BY-SA 2.0</a>',
-		  osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
+      var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      osmAttribution = 'Daten: API.Leipzig - <a target="_blank" href="http://www.apileipzig.de">http://www.apileipzig.de</a> | <a target="_blank" href="http://www.openstreetmap.org/">Karte hergestellt aus OpenStreetMap-Daten</a> (Lizenz: <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons BY-SA 2.0</a>)',
+      osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
 
-		  map.setView(new L.LatLng(51.338, 12.375), 13).addLayer(osm);
-
+      map.setView(new L.LatLng(51.338, 12.375), 13).addLayer(osm);
+      // ############## BEGIN DATA ######################################

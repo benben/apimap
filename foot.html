@@ -1,6 +1,8 @@
 // ############### END OF DATA ################
 
-$(".leaflet-top.leaflet-left").prepend('<div id="nav" class="leaflet-control-zoom leaflet-control"></div>')
+$(".leaflet-top.leaflet-left").prepend('<div id="nav" class="leaflet-control-zoom leaflet-control"></div>');
+
+$(".leaflet-top.leaflet-left").prepend('<div id="head" style="color:white;font-weight:bold;font-size:100%;" class="leaflet-control-zoom leaflet-control"><br>Medienunternehmen<br>der Stadt Leipzig</div>');
 
 $(".leaflet-control-zoom.leaflet-control").css("background-color","rgba(0,0,0,0.75)");
 
@@ -21,7 +23,7 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
 
       for (var i = 1; i <= 12; i++) {
 
-        $('#nav').append('<div id="'+pad(i%12,2)+'" style="font-size:90%;color:white;"><img style="height:15px;" src="images/'+pad(i%12,2)+'.png"><span style="padding:3px;">'+names[i%12]+'</span></div>');
+        $('#nav').append('<div id="'+pad(i%12,2)+'" style="font-size:90%;color:white;"><img style="height:15px;" src="images/'+pad(i%12,2)+'.png"><span style="padding:3px;">'+names[i%12]+'</span> <span style="font-size:70%;color:#BBB;">('+sub_market_counts[pad(i%12,2)]+')</span></div>');
 
         $('#'+pad(i%12,2)).hover(function() {
           $(this).css('cursor','pointer');
@@ -49,7 +51,7 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
         })
       }
 
-      $('#nav').append('<p id="toggle_all" style="margin-left:12px;margin-top:10px;color:white;font-size:90%;">Alles ausblenden</p>');
+      $('#nav').append('<p id="toggle_all" style="margin-left:12px;margin-top:10px;color:white;font-size:90%;">Alles ausblenden <span style="font-size:70%;color:#BBB;">('+sub_market_counts['all']+')</span></p>');
 
       $('#toggle_all').hover(function() {
         $(this).css('cursor','pointer');
@@ -57,7 +59,8 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
 
       $('#toggle_all').toggle(function(ev){
         ev.preventDefault();
-        $(this).text("Alle einblenden");
+        $(this).text('Alles einblenden ');
+        $(this).append('<span style="font-size:70%;color:#BBB;">('+sub_market_counts['all']+')</span>');
         for (var i = 0; i <= 11; i++) {
           $('div#nav div#'+pad(i,2)).css('color', '#888');
           $('div#nav div#'+pad(i,2)).children('img').css('opacity', '0.6');
@@ -67,7 +70,8 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
         }
       },function(ev){
         ev.preventDefault();
-        $(this).text("Alle ausblenden");
+        $(this).text('Alle ausblenden ');
+        $(this).append('<span style="font-size:70%;color:#BBB;">('+sub_market_counts['all']+')</span>');
         for (var i = 0; i <= 11; i++) {
           $('div#nav div#'+pad(i,2)).css('color', 'white');
           $('div#nav div#'+pad(i,2)).children('img').css('opacity', '');
@@ -76,8 +80,10 @@ var names = ["Nicht zugeordnet", "Software/Games-Industrie", "Buchmarkt", "Press
           $('div.leaflet-marker-pane div.'+pad(i,2)).show();
         }
       });
+      $(".leaflet-top.leaflet-left").css("top", - $("#head").height()/2);
+      $("#head").css("width", $("#nav").width());
 
-      $('#nav').append('<p style="margin-left:12px;margin-top:10px;font-size:70%;color:#CCC">Bitte auf einzelne Teilmärkte<br>klicken, um sie auf der Karte<br>ein- und auszublenden.</p>');
+      $('#nav').append('<p style="margin-left:12px;margin-top:10px;font-size:70%;color:#BBB;">Bitte auf einzelne Teilmärkte<br>klicken, um sie auf der Karte<br>ein- und auszublenden.</p>');
     });
     </script>
 
